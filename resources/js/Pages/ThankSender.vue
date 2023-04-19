@@ -15,9 +15,9 @@ defineProps({
     <Head title="Thanks" />
 
     <div
-        class="flex justify-center items-center flex-col h-full"
+        class="flex flex-col justify-center px-[1.5rem] min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900"
     >
-        <div v-if="canLogin" class="sm:fixed sm:top-0 sm:right-0 p-6 text-right text-3xl">
+        <div v-if="canLogin" class="fixed top-0 right-0 p-6 text-right text-3xl">
             <Link
                 v-if="$page.props.auth.user"
                 :href="route('dashboard')"
@@ -40,7 +40,7 @@ defineProps({
                 >
             </template>
         </div>
-        <h1 class="text-4xl mb-10">THANKS SENDER</h1>
+        <h1 class="text-4xl text-center font-bold mb-[2rem]">THANKS SENDER</h1>
         <div class="flex flex-col items-center">
             <div class="mb-4 text-3xl font-bold text-center leading-normal">
                 本登録+お申し込み<br>

@@ -36,10 +36,18 @@ Route::get('/thanks', function () {
 });
 
 Route::get('/form', [FormController::class,'form'])->middleware(['auth', 'verified'])->name('form');
+
 Route::post('/form-confirm', [FormConfirmController::class,'formConfirm'])->middleware(['auth', 'verified'])->name('form-confirm');
+Route::get('/form-confirm', function () {
+    return Inertia::render('ConfirmForm');
+})->middleware(['auth', 'verified'])->name('form-confirm');
+
 Route::post('/thanks-sender', [ProfileController::class, 'update'])->middleware(['auth', 'verified'])->name('thanks-sender');
 Route::get('/thanks-sender', function () {
-    return Inertia::render('Thanks');
+    return Inertia::render('ThankSender',[
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+    ]);
 })->middleware(['auth', 'verified'])->name('thanks-sender');
 
 

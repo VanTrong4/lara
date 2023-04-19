@@ -6,6 +6,7 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
+import NProgress from 'nprogress';
 
 defineProps({
     canResetPassword: {
@@ -23,8 +24,10 @@ const form = useForm({
 });
 
 const submit = () => {
+    NProgress.start();
     form.post(route('login'), {
         onFinish: () => {
+            NProgress.done();
             form.reset('password')},
     });
 };
@@ -65,13 +68,19 @@ const submit = () => {
                     </label>
                 </div>
 
-                <div class="flex items-center justify-end mt-4">
-                    <Link v-if="canResetPassword" :href="route('password.request')"
-                        class="underline text-xl hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    Forgot your password?
-                    </Link>
+                <div class="flex items-center justify-end mt-4 sm:flex-col">
+                    <div class="flex flex-col sm:w-full">
+                        <Link v-if="canResetPassword" :href="route('password.request')"
+                            class="underline text-xl hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        Forgot your password?
+                        </Link>
+                        <Link :href="route('register')"
+                            class="underline mt-[2rem] text-xl hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        You don't have account, let's register?
+                        </Link>
+                    </div>
 
-                    <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    <PrimaryButton class="ml-4 sm:mx-auto sm:mt-[2rem]" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                         Log in
                     </PrimaryButton>
                 </div>

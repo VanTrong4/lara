@@ -7,11 +7,10 @@ import TextInput from '@/Components/TextInput.vue';
 import SelectInput from '@/Components/SelectInput.vue';
 import RadioInput from '@/Components/RadioInput.vue';
 import { Head, useForm, usePage } from '@inertiajs/vue3';
-import { onMounted } from 'vue'
 
 
 let inputData ;
-if(sessionStorage.getItem("inputUser")){
+if(sessionStorage.getItem("inputUser")!="undefined"){
     inputData = JSON.parse(sessionStorage.getItem("inputUser"))
 }
 
@@ -50,16 +49,31 @@ const form = useForm({
     afterCard:'',
 });
 
-onMounted(() => sessionStorage.removeItem("inputUser"))
 
 const submit = () => {
-    form.post(route('form-confirm'));
+    form.post(route('form-confirm'), {
+        onFinish: () => {
+            sessionStorage.setItem('inputUser',JSON.stringify(form))},
+    });
+    
 };
 
 
 const change = (e) => {
     console.log(e.target.value);
 };
+
+const addImage = (e) =>{
+    form[e.target.name] = e.target.files[0];
+    console.log(e.target.files[0]);
+
+    const reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0])
+
+    reader.addEventListener('load', () => {
+        sessionStorage.setItem(e.target.name, JSON.stringify(reader.result));
+    });
+}
 
 
 
@@ -70,11 +84,11 @@ const change = (e) => {
     <AuthenticatedLayout>
         <div class="container  mt-[10rem] px-[1.5rem]">
             <h1 class="text-5xl font-bold text-gray-900">本登録用のフォーム（お申し込み用）</h1>
-            <form autocomplete="on" @focusout="validate" @submit.prevent="submit"
+            <form @submit.prevent="submit"
                 class="w-full px-[4rem] py-[4rem] border border-slate-500 rounded-sm sm:px-[1rem]" enctype="multipart/form-data">
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class=" w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="name" value="名前" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
@@ -88,7 +102,7 @@ const change = (e) => {
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="Furigana" value="フリガナ" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
@@ -102,13 +116,13 @@ const change = (e) => {
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="" value="生年月日" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                     </div>
-                    <div class="w-3/5 ">
-                        <div class="flex gap-10 w-full">
+                    <div class="w-[60%] sm:w-[100%] ">
+                        <div class="flex flex-wrap gap-10 w-full sm:gap-[1.5rem]">
                             <SelectInput  min="1900" max="2004" v-model="form.year" opDefault="年" id="year" />
                             <SelectInput  min="1" max="12" v-model="form.month" opDefault="月" id="month" />
                             <SelectInput  min="1" max="31" v-model="form.day" opDefault="日" id="day" />
@@ -119,13 +133,13 @@ const change = (e) => {
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
-                            <InputLabel for="gender" value="生年月日" class=" text-3xl font-bold sm:mr-[30px]" />
+                        <div class="flex justify-between mb-8">
+                            <InputLabel for="gender" value="性別" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                     </div>
                     <div class=" w-3/5">
-                        <div class="flex gap-20 w-full">
+                        <div class="flex flex-wrap gap-x-20 w-full">
                             <RadioInput  v-model="form.gender" name="gender" id="male" lable="男性" />
                             <RadioInput  v-model="form.gender" name="gender" id="female" lable="女性" />
                         </div>
@@ -136,7 +150,7 @@ const change = (e) => {
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="email" value="メールアドレス" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
@@ -150,13 +164,13 @@ const change = (e) => {
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="preferContact" value="ご希望の連絡方法" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                     </div>
                     <div class=" w-3/5">
-                        <div class="flex gap-20 w-full">
+                        <div class="flex flex-wrap gap-x-20 w-full">
                             <RadioInput  v-model="form.preferContact" name="preferContact" id="typeEmale" lable="メール" />
                             <RadioInput  v-model="form.preferContact" name="preferContact" id="line" lable="LINE" />
                         </div>
@@ -166,7 +180,7 @@ const change = (e) => {
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="LINEID" value="LINE ID" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-slate-500 min-w-[40px]">任意</p>
                         </div>
@@ -178,11 +192,11 @@ const change = (e) => {
                     </div>
                 </div>
 
-                <h2 class="text-4xl my-20 text-center">お住まいの情報</h2>
+                <h2 class="text-4xl my-20 text-center text-green-300 font-bold">お住まいの情報</h2>
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="postCodeBef" value="郵便番号" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
@@ -201,7 +215,7 @@ const change = (e) => {
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="district" value="都道府県" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
@@ -264,7 +278,7 @@ const change = (e) => {
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="city" value="市区町村" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
@@ -277,7 +291,7 @@ const change = (e) => {
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="address" value="番地" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
@@ -290,7 +304,7 @@ const change = (e) => {
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="apartmentName" value="マンション名・部屋番号" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-slate-500 min-w-[40px]">任意</p>
                         </div>
@@ -302,11 +316,11 @@ const change = (e) => {
                     </div>
                 </div>
 
-                <h2 class="text-4xl my-20 text-center">勤務先の情報</h2>
+                <h2 class="text-4xl my-20 text-center text-green-300 font-bold">勤務先の情報</h2>
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="postCodeComBef" value="郵便番号" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
@@ -325,7 +339,7 @@ const change = (e) => {
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="districtCom" value="都道府県" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
@@ -388,7 +402,7 @@ const change = (e) => {
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="cityCom" value="市区町村" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
@@ -401,7 +415,7 @@ const change = (e) => {
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="addressCom" value="番地" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
@@ -415,7 +429,7 @@ const change = (e) => {
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="apartmentNameCom" value="マンション名・部屋番号" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-slate-500 min-w-[40px]">任意</p>
                         </div>
@@ -429,7 +443,7 @@ const change = (e) => {
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="telephoneCom" value="電話番号" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
@@ -441,11 +455,11 @@ const change = (e) => {
                     </div>
                 </div>
 
-                <h2 class="text-4xl my-20 text-center">口座番号</h2>
+                <h2 class="text-4xl my-20 text-center text-green-300 font-bold">口座番号</h2>
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="bankName" value="銀行名" class=" text-3xl font-bold sm:mr-[30px]" />
                         </div>
                     </div>
@@ -458,7 +472,7 @@ const change = (e) => {
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="branchName" value="支店名" class=" text-3xl font-bold sm:mr-[30px]" />
                         </div>
                     </div>
@@ -471,7 +485,7 @@ const change = (e) => {
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="teleBranch" value="支店番号" class=" text-3xl font-bold sm:mr-[30px]" />
                         </div>
                     </div>
@@ -484,13 +498,13 @@ const change = (e) => {
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="typeAccount" value="口座の種類" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                     </div>
                     <div class=" w-3/5">
-                        <div class="flex gap-20 w-full">
+                        <div class="flex flex-wrap gap-x-20 w-full">
                             <RadioInput  v-model="form.typeAccount" name="typeAccount" id="normal" lable="普通" />
                             <RadioInput  v-model="form.typeAccount" name="typeAccount" id="temporary" lable="当座" />
                         </div>
@@ -500,7 +514,7 @@ const change = (e) => {
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="account" value="口座番号" class=" text-3xl font-bold sm:mr-[30px]" />
                         </div>
                     </div>
@@ -513,7 +527,7 @@ const change = (e) => {
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="accountName" value="口座名義(カナ)" class=" text-3xl font-bold sm:mr-[30px]" />
                         </div>
                     </div>
@@ -524,19 +538,19 @@ const change = (e) => {
                     </div>
                 </div>
 
-                <h2 class="text-4xl my-20 text-center">個人情報の写真添付</h2>
+                <h2 class="text-4xl my-20 text-center text-green-300 font-bold">個人情報の写真添付</h2>
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class="w-[35%] sm:w-[100%]">
-                        <div class="flex justify-between mb-8 sm:justify-start">
+                        <div class="flex justify-between mb-8">
                             <InputLabel for="accountName" value="必要書類の添付" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                     </div>
                     <div class="w-[60%] sm:w-[100%]">
                         <div class="flex flex-wrap gap-y-[1.5rem] mb-[2rem]">
-                            <div class="w-1/2 text-3xl">セルフィー（自画撮り）</div>
-                            <input class="w-1/2 text-xl" type="file" name="avatar" @change="form.avatar = $event.target.files[0]">
+                            <div class="w-1/2 text-3xl sm:w-full">セルフィー（自画撮り）</div>
+                            <input class="w-1/2 text-xl" type="file" name="avatar" @change="addImage($event)">
                             <InputError class="mt-2" :message="form.errors.avatar" />
                             <p class="text-gray-500 text-xl">* Please take a selfie with your ID and<br>send a photo of yourself at the same time.</p>
                         </div>
@@ -545,12 +559,12 @@ const change = (e) => {
                             <div class="w-1/2 text-xl sm:w-full">
                                 <div class="mb-[1.5rem]">
                                     <span class=" font-medium text-red-500">※表面</span>
-                                    <input type="file" name="frontCard" @change="form.frontCard = $event.target.files[0]">
+                                    <input type="file" name="frontCard" @change="addImage($event)">
                                     <InputError class="mt-2" :message="form.errors.frontCard" />
                                 </div>
                                 <div>
                                     <span class=" font-medium text-red-500">※裏面</span>
-                                    <input type="file" name="afterCard" @change="form.afterCard = $event.target.files[0]">
+                                    <input type="file" name="afterCard" @change="addImage($event)">
                                     <InputError class="mt-2" :message="form.errors.afterCard" />
                                 </div>
                             </div>

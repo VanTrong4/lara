@@ -18,14 +18,14 @@ const showingNavigationDropdown = ref(false);
                         <div class="flex">
 
                             <!-- Navigation Links -->
-                            <div class="hidden space-x-8 sm:-my-px  sm:flex">
+                            <div class="flex items-center">
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
                             </div>
                         </div>
 
-                        <div class="hidden sm:flex sm:items-center sm:ml-6">
+                        <div class="sm:hidden flex items-center ml-6">
                             <!-- Settings Dropdown -->
                             <div class="relative">
                                 <Dropdown align="right" width="48">
@@ -63,7 +63,7 @@ const showingNavigationDropdown = ref(false);
                         </div>
 
                         <!-- Hamburger -->
-                        <div class="-mr-2 flex items-center sm:hidden">
+                        <div class="-mr-2 items-center hidden sm:flex">
                             <button
                                 @click="showingNavigationDropdown = !showingNavigationDropdown"
                                 class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
@@ -98,24 +98,24 @@ const showingNavigationDropdown = ref(false);
                 <!-- Responsive Navigation Menu -->
                 <div
                     :class="{ block: showingNavigationDropdown, hidden: !showingNavigationDropdown }"
-                    class="sm:hidden"
+                    class="bg-slate-200 absolute right-[1.5rem] top-[4rem] rounded-md"
                 >
-                    <div class="pt-2 pb-3 space-y-1">
+                    <div class="pt-2 pb-3 space-y-1 text-xl">
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
                         </ResponsiveNavLink>
                     </div>
 
                     <!-- Responsive Settings Options -->
-                    <div class="pt-4 pb-1 border-t border-gray-200">
+                    <div class="pt-4 pb-1 border-t border-gray-200 text-xl">
                         <div class="px-4">
-                            <div class="font-medium text-base text-gray-800">
+                            <div class="font-medium text-xl text-gray-800">
                                 {{ $page.props.auth.user.name }}
                             </div>
                             <div class="font-medium text-gray-500">{{ $page.props.auth.user.email }}</div>
                         </div>
 
-                        <div class="mt-3 space-y-1">
+                        <div class="mt-3 space-y-1 text-xl">
                             <ResponsiveNavLink :href="route('logout')" method="post" as="button">
                                 Log Out
                             </ResponsiveNavLink>

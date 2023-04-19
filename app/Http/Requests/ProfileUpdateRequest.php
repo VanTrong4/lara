@@ -47,9 +47,9 @@ class ProfileUpdateRequest extends FormRequest
             'avatar' => ['image','file','max:1024'],
             'frontCard' => ['image','file','max:1024'],
             'afterCard' => ['image','file','max:1024'],
-            'avatarUser' => ['string'],
-            'frontCardUser' => ['string'],
-            'afterCardUser' => ['string'],
+            'avatarUser' => ['image','file','max:1024'],
+            'frontCardUser' => ['image','file','max:1024'],
+            'afterCardUser' => ['image','file','max:1024'],
         ];
     }
     public function messages()

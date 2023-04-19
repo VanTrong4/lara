@@ -10,65 +10,93 @@ const props = defineProps({
     dataForm : Object,
 })
 
+let inputData ;
+let avatarUser;
+let frontCardUser;
+let afterCardUser;
+
+
+if(sessionStorage.getItem("inputUser")){
+    inputData = JSON.parse(sessionStorage.getItem("inputUser"))
+    avatarUser = JSON.parse(sessionStorage.getItem("avatar"))
+    frontCardUser = JSON.parse(sessionStorage.getItem("frontCard"))
+    afterCardUser = JSON.parse(sessionStorage.getItem("afterCard"))
+}
 
 const form = useForm({
-    name: props.dataForm.name,
-    Furigana: props.dataForm.Furigana,
-    year: props.dataForm.year,
-    month: props.dataForm.month,
-    day: props.dataForm.day,
-    gender: props.dataForm.gender,
-    email: props.dataForm.email,
-    preferContact: props.dataForm.preferContact,
-    LINEID: props.dataForm.LINEID,
-    postCodeBef: props.dataForm.postCodeBef,
-    postCodeAfter: props.dataForm.postCodeAfter,
-    district: props.dataForm.district,
-    city: props.dataForm.city,
-    address: props.dataForm.address,
-    apartmentName: props.dataForm.apartmentName,
-    postCodeComBef: props.dataForm.postCodeComBef,
-    postCodeComAfter: props.dataForm.postCodeComAfter,
-    districtCom: props.dataForm.districtCom,
-    cityCom: props.dataForm.cityCom,
-    addressCom: props.dataForm.addressCom,
-    apartmentNameCom: props.dataForm.apartmentNameCom,
-    telephoneCom: props.dataForm.telephoneCom,
-    bankName: props.dataForm.bankName,
-    branchName: props.dataForm.branchName,
-    teleBranch: props.dataForm.teleBranch,
-    typeAccount: props.dataForm.typeAccount,
-    account: props.dataForm.account,
-    accountName: props.dataForm.accountName,
-    avatarUser: props.dataForm.avatarUser,
-    frontCardUser: props.dataForm.frontCardUser,
-    afterCardUser: props.dataForm.afterCardUser,
+    name: props.dataForm?.name||inputData.name,
+    Furigana: props.dataForm?.Furigana||inputData.Furigana,
+    year: props.dataForm?.year||inputData.year,
+    month: props.dataForm?.month||inputData.month,
+    day: props.dataForm?.day||inputData.day,
+    gender: props.dataForm?.gender||inputData.gender,
+    email: props.dataForm?.email||inputData.email,
+    preferContact: props.dataForm?.preferContact||inputData.preferContact,
+    LINEID: props.dataForm?.LINEID||inputData.LINEID,
+    postCodeBef: props.dataForm?.postCodeBef||inputData.postCodeBef,
+    postCodeAfter: props.dataForm?.postCodeAfter||inputData.postCodeAfter,
+    district: props.dataForm?.district||inputData.district,
+    city: props.dataForm?.city||inputData.city,
+    address: props.dataForm?.address||inputData.address,
+    apartmentName: props.dataForm?.apartmentName||inputData.apartmentName,
+    postCodeComBef: props.dataForm?.postCodeComBef||inputData.postCodeComBef,
+    postCodeComAfter: props.dataForm?.postCodeComAfter||inputData.postCodeComAfter,
+    districtCom: props.dataForm?.districtCom||inputData.districtCom,
+    cityCom: props.dataForm?.cityCom||inputData.cityCom,
+    addressCom: props.dataForm?.addressCom||inputData.addressCom,
+    apartmentNameCom: props.dataForm?.apartmentNameCom||inputData.apartmentNameCom,
+    telephoneCom: props.dataForm?.telephoneCom||inputData.telephoneCom,
+    bankName: props.dataForm?.bankName||inputData.bankName,
+    branchName: props.dataForm?.branchName||inputData.branchName,
+    teleBranch: props.dataForm?.teleBranch||inputData.teleBranch,
+    typeAccount: props.dataForm?.typeAccount||inputData.typeAccount,
+    account: props.dataForm?.account||inputData.account,
+    accountName: props.dataForm?.accountName||inputData.accountName,
+    avatarUser: inputData.avatar,
+    frontCardUser: inputData.frontCard,
+    afterCardUser: inputData.afterCard,
 });
 
 
 const submit = () => {
     NProgress.start();
+    form.avatarUser = getPhoto(avatarUser);
+    form.frontCardUser = getPhoto(frontCardUser);
+    form.afterCardUser = getPhoto(afterCardUser);
+    console.log(form.afterCardUser);
     form.post(route('thanks-sender'), {
         onFinish: () => {
-            NProgress.done();},
+            NProgress.done();
+console.log(form);
+            // sessionStorage.removeItem("inputUser");
+            // sessionStorage.removeItem("avatar");
+            // sessionStorage.removeItem("frontCard");
+            // sessionStorage.removeItem("afterCard");
+        },
     });
 };
 
 const backForm =() => {
-    sessionStorage.setItem('inputUser',JSON.stringify(props.dataForm));
     history.back();
 }
 
+function getPhoto(img64) {
+   let base64Parts = img64.split(",");
+   let fileFormat = base64Parts[0].split(";")[1];
+   let fileContent = base64Parts[1];
+   let file = new File([fileContent], `${img64}-${inputData.email}`, {type: fileFormat});
+   return file;
+}
 
 </script>
 
 <template>
     <Head title="Form" />
     <AuthenticatedLayout>
-        <div class="container mt-[10rem]">
+        <div class="container mt-[10rem] px-[1.5rem]">
             <h1 class="text-5xl font-bold text-gray-900">本登録用のフォーム（お申し込み用）</h1>
-            <form @focusout="validate" @submit.prevent="submit"
-                class="w-full px-[4rem] py-[4rem] border border-slate-500 rounded-sm sm-px-[1rem]">
+            <form @submit.prevent="submit"
+                class="w-full px-[4rem] py-[4rem] border border-slate-500 rounded-sm sm:px-[1rem]">
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
@@ -105,10 +133,10 @@ const backForm =() => {
                     </div>
                 </div>
 
-                <div class="flex justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-x-[10%]">
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="gender" value="生年月日" class=" text-3xl font-bold" />
+                            <InputLabel for="gender" value="性別" class=" text-3xl font-bold" />
                         </div>
                     </div>
                     <div class=" w-[55%] sm:w-full">
@@ -131,7 +159,7 @@ const backForm =() => {
                     </div>
                 </div>
 
-                <div class="flex justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-x-[10%]">
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
                             <InputLabel for="preferContact" value="ご希望の連絡方法" class=" text-3xl font-bold" />
@@ -155,7 +183,7 @@ const backForm =() => {
                     </div>
                 </div>
 
-                <h2 class="text-4xl my-20 text-center">お住まいの情報</h2>
+                <h2 class="text-4xl my-20 text-center text-green-300 font-bold">お住まいの情報</h2>
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
@@ -216,10 +244,10 @@ const backForm =() => {
                     </div>
                 </div>
 
-                <h2 class="text-4xl my-20 text-center">勤務先の情報</h2>
+                <h2 class="text-4xl my-20 text-center text-green-300 font-bold">勤務先の情報</h2>
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
-                    <div class="w-[35%]">
+                    <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
                             <InputLabel for="postCodeComBef" value="郵便番号" class=" text-3xl font-bold" />
                         </div>
@@ -288,7 +316,7 @@ const backForm =() => {
                     </div>
                 </div>
 
-                <h2 class="text-4xl my-20 text-center">口座番号</h2>
+                <h2 class="text-4xl my-20 text-center text-green-300 font-bold">口座番号</h2>
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
@@ -323,7 +351,7 @@ const backForm =() => {
                     </div>
                 </div>
 
-                <div class="flex justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-x-[10%]">
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
                             <InputLabel for="typeAccount" value="口座の種類" class=" text-3xl font-bold" />
@@ -354,9 +382,11 @@ const backForm =() => {
                         </div>
                     </div>
                     <div class="w-[55%] sm:w-[100%]">
-                        <InputConfirm :value="form.avatar" />
+                        <InputConfirm :value="form.accountName" />
                     </div>
                 </div>
+
+                <h2 class="text-4xl my-20 text-center text-green-300 font-bold">個人情報の写真添付</h2>
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
@@ -367,18 +397,18 @@ const backForm =() => {
                     <div class="w-[55%] sm:w-[100%]">
                         <div class="flex flex-wrap gap-y-[1.5rem] mb-[2rem] sm:w-full">
                             <div class="w-1/2 text-3xl sm:w-full">セルフィー（自画撮り）</div>
-                            <img class="w-[100px] h-auto" :src="'../storage/image/'+form.avatarUser">
+                            <img class="w-[100px] h-auto" :src="avatarUser">
                             <input class="hidden" :value="form.avatarUser" >
                         </div>
                         <div class="flex flex-wrap gap-y-[1.5rem]">
                             <div class="w-1/2 text-3xl sm:w-full">運転免許証、または<br>顔写真付きの身分証明書</div>
                             <div class="w-1/2 text-xl sm:w-full">
                                 <div class="mb-[1.5rem]">
-                                    <img class="w-[100px] h-auto" :src="'../storage/image/'+form.frontCardUser">
+                                    <img class="w-[100px] h-auto" :src="frontCardUser">
                                     <input class="hidden" :value="form.frontCardUser" >
                                 </div>
                                 <div>
-                                    <img class="w-[100px] h-auto" :src="'../storage/image/'+form.afterCardUser">
+                                    <img class="w-[100px] h-auto" :src="afterCardUser">
                                     <input class="hidden" :value="form.afterCardUser" >
                                 </div>
                             </div>
@@ -386,7 +416,6 @@ const backForm =() => {
                     </div>
                 </div>
 
-                <h2 class="text-4xl my-20 text-center">個人情報の写真添付</h2>
                 <div class="flex flex-col-reverse items-center mt-4 p-[2rem] gap-6">
                     <div class="h-[3rem] cursor-pointer bg-gray-800 text-white flex items-center justify-center px-[0.3rem]" @click="backForm">
                         前へ戻る
