@@ -68,43 +68,43 @@ const change = (e) => {
 <template>
     <Head title="Form" />
     <AuthenticatedLayout>
-        <div class="container mt-11  mt-[10rem]">
+        <div class="container  mt-[10rem] px-[1.5rem]">
             <h1 class="text-5xl font-bold text-gray-900">本登録用のフォーム（お申し込み用）</h1>
             <form autocomplete="on" @focusout="validate" @submit.prevent="submit"
-                class="w-full px-[4rem] py-[4rem] border border-slate-500 rounded-sm" enctype="multipart/form-data">
-                <div class="flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="name" value="名前" class=" text-3xl font-bold" />
-                            <p class=" text-3xl font-medium text-red-500">必須</p>
+                class="w-full px-[4rem] py-[4rem] border border-slate-500 rounded-sm sm:px-[1rem]" enctype="multipart/form-data">
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
+                    <div class=" w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="name" value="名前" class=" text-3xl font-bold sm:mr-[30px]" />
+                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                         <p class=" text-gray-500 text-xl">※お名前を漢字でご入力</p>
                     </div>
-                    <div class="w-3/5">
+                    <div class="w-[60%] sm:w-[100%]">
                         <TextInput  id="name" v-model="form.name" type="text" autocomplete="name" />
                         <InputError class="mt-2" :message="form.errors.name" />
                     </div>
                 </div>
 
-                <div class="flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="Furigana" value="フリガナ" class=" text-3xl font-bold" />
-                            <p class=" text-3xl font-medium text-red-500">必須</p>
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="Furigana" value="フリガナ" class=" text-3xl font-bold sm:mr-[30px]" />
+                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                         <p class=" text-gray-500 text-xl">※お名前のフリガナをご入力</p>
                     </div>
-                    <div class="w-3/5">
+                    <div class="w-[60%] sm:w-[100%]">
                         <TextInput  id="Furigana" v-model="form.Furigana" type="text" autocomplete="Furigana" />
                         <InputError class="mt-2" :message="form.errors.Furigana" />
                     </div>
                 </div>
 
-                <div class="flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="" value="生年月日" class=" text-3xl font-bold" />
-                            <p class=" text-3xl font-medium text-red-500">必須</p>
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="" value="生年月日" class=" text-3xl font-bold sm:mr-[30px]" />
+                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                     </div>
                     <div class="w-3/5 ">
@@ -117,11 +117,11 @@ const change = (e) => {
                     </div>
                 </div>
 
-                <div class="flex justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="gender" value="生年月日" class=" text-3xl font-bold" />
-                            <p class=" text-3xl font-medium text-red-500">必須</p>
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="gender" value="生年月日" class=" text-3xl font-bold sm:mr-[30px]" />
+                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                     </div>
                     <div class=" w-3/5">
@@ -134,25 +134,25 @@ const change = (e) => {
                 </div>
 
 
-                <div class="flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="email" value="メールアドレス" class=" text-3xl font-bold" />
-                            <p class=" text-3xl font-medium text-red-500">必須</p>
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="email" value="メールアドレス" class=" text-3xl font-bold sm:mr-[30px]" />
+                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                         <p class=" text-gray-500 text-xl">※半角英数字でご入力</p>
                     </div>
-                    <div class="w-3/5">
+                    <div class="w-[60%] sm:w-[100%]">
                         <TextInput  id="email" v-model="form.email" type="email" autocomplete="email" />
                         <InputError class="mt-2" :message="form.errors.email" />
                     </div>
                 </div>
 
-                <div class="flex justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="preferContact" value="ご希望の連絡方法" class=" text-3xl font-bold" />
-                            <p class=" text-3xl font-medium text-red-500">必須</p>
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="preferContact" value="ご希望の連絡方法" class=" text-3xl font-bold sm:mr-[30px]" />
+                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                     </div>
                     <div class=" w-3/5">
@@ -164,15 +164,15 @@ const change = (e) => {
                     </div>
                 </div>
 
-                <div class="flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="LINEID" value="LINE ID" class=" text-3xl font-bold" />
-                            <p class=" text-3xl font-medium text-slate-500">任意</p>
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="LINEID" value="LINE ID" class=" text-3xl font-bold sm:mr-[30px]" />
+                            <p class=" text-3xl font-medium text-slate-500 min-w-[40px]">任意</p>
                         </div>
                         <p class=" text-gray-500 text-xl">※半角英数字で8文字以上でご入力</p>
                     </div>
-                    <div class="w-3/5">
+                    <div class="w-[60%] sm:w-[100%]">
                         <TextInput  id="LINEID" name="LINEID" v-model="form.LINEID" type="text" autocomplete="LINEID" />
                         <InputError class="mt-2" :message="form.errors.LINEID" />
                     </div>
@@ -180,14 +180,14 @@ const change = (e) => {
 
                 <h2 class="text-4xl my-20 text-center">お住まいの情報</h2>
 
-                <div class="flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="postCodeBef" value="郵便番号" class=" text-3xl font-bold" />
-                            <p class=" text-3xl font-medium text-red-500">必須</p>
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="postCodeBef" value="郵便番号" class=" text-3xl font-bold sm:mr-[30px]" />
+                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                     </div>
-                    <div class="w-3/5">
+                    <div class="w-[60%] sm:w-[100%]">
                         <div class="flex w-full items-center gap-6">
                             <TextInput  class="w-1/4" size="4" maxlength="3" name="postCodeBef" type="number" v-model="form.postCodeBef" />
                             -
@@ -199,14 +199,14 @@ const change = (e) => {
                     </div>
                 </div>
 
-                <div class="flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="district" value="都道府県" class=" text-3xl font-bold" />
-                            <p class=" text-3xl font-medium text-red-500">必須</p>
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="district" value="都道府県" class=" text-3xl font-bold sm:mr-[30px]" />
+                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                     </div>
-                    <div class="w-3/5">
+                    <div class="w-[60%] sm:w-[100%]">
                         <select  name="district" v-model="form.district"
                             class="leading-[1.3] focus:border-indigo-500 rounded-md shadow-sm mt-1 block h-[6.4rem] bg-gray-100 text-3xl border-none w-1/2">
                             <option value="" selected disabled>都道府県</option>
@@ -262,40 +262,40 @@ const change = (e) => {
                     </div>
                 </div>
 
-                <div class="flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="city" value="市区町村" class=" text-3xl font-bold" />
-                            <p class=" text-3xl font-medium text-red-500">必須</p>
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="city" value="市区町村" class=" text-3xl font-bold sm:mr-[30px]" />
+                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                     </div>
-                    <div class="w-3/5">
+                    <div class="w-[60%] sm:w-[100%]">
                         <TextInput  id="city" name="city" v-model="form.city" type="text" autocomplete="city" @input="change($event)" />
                         <InputError class="mt-2" :message="form.errors.city" />
                     </div>
                 </div>
 
-                <div class="flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="address" value="番地" class=" text-3xl font-bold" />
-                            <p class=" text-3xl font-medium text-red-500">必須</p>
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="address" value="番地" class=" text-3xl font-bold sm:mr-[30px]" />
+                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                     </div>
-                    <div class="w-3/5">
+                    <div class="w-[60%] sm:w-[100%]">
                         <TextInput  id="address" name="address" v-model="form.address" type="text" autocomplete="address" />
                         <InputError class="mt-2" :message="form.errors.address" />
                     </div>
                 </div>
 
-                <div class="flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="apartmentName" value="マンション名・部屋番号" class=" text-3xl font-bold" />
-                            <p class=" text-3xl font-medium text-slate-500">任意</p>
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="apartmentName" value="マンション名・部屋番号" class=" text-3xl font-bold sm:mr-[30px]" />
+                            <p class=" text-3xl font-medium text-slate-500 min-w-[40px]">任意</p>
                         </div>
                     </div>
-                    <div class="w-3/5">
+                    <div class="w-[60%] sm:w-[100%]">
                         <TextInput  id="apartmentName" name="apartmentName" v-model="form.apartmentName" type="text"
                             autocomplete="apartmentName" />
                         <InputError class="mt-2" :message="form.errors.apartmentName" />
@@ -304,14 +304,14 @@ const change = (e) => {
 
                 <h2 class="text-4xl my-20 text-center">勤務先の情報</h2>
 
-                <div class="flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="postCodeComBef" value="郵便番号" class=" text-3xl font-bold" />
-                            <p class=" text-3xl font-medium text-red-500">必須</p>
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="postCodeComBef" value="郵便番号" class=" text-3xl font-bold sm:mr-[30px]" />
+                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                     </div>
-                    <div class="w-3/5">
+                    <div class="w-[60%] sm:w-[100%]">
                         <div class="flex w-full items-center gap-6">
                             <TextInput  class="w-1/4" size="4" maxlength="3" name="postCodeComBef" type="number"  v-model="form.postCodeComBef"/>
                             -
@@ -323,14 +323,14 @@ const change = (e) => {
                     </div>
                 </div>
 
-                <div class="flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="districtCom" value="都道府県" class=" text-3xl font-bold" />
-                            <p class=" text-3xl font-medium text-red-500">必須</p>
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="districtCom" value="都道府県" class=" text-3xl font-bold sm:mr-[30px]" />
+                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                     </div>
-                    <div class="w-3/5">
+                    <div class="w-[60%] sm:w-[100%]">
                         <select  name="districtCom" v-model="form.districtCom"
                             class="leading-[1.3] focus:border-indigo-500 rounded-md shadow-sm mt-1 block h-[6.4rem] bg-gray-100 text-3xl border-none w-1/2">
                             <option value="" selected disabled>都道府県</option>
@@ -386,55 +386,55 @@ const change = (e) => {
                     </div>
                 </div>
 
-                <div class="flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="cityCom" value="市区町村" class=" text-3xl font-bold" />
-                            <p class=" text-3xl font-medium text-red-500">必須</p>
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="cityCom" value="市区町村" class=" text-3xl font-bold sm:mr-[30px]" />
+                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                     </div>
-                    <div class="w-3/5">
+                    <div class="w-[60%] sm:w-[100%]">
                         <TextInput  id="cityCom" name="cityCom" v-model="form.cityCom" type="text" autocomplete="cityCom" />
                         <InputError class="mt-2" :message="form.errors.cityCom" />
                     </div>
                 </div>
 
-                <div class="flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="addressCom" value="番地" class=" text-3xl font-bold" />
-                            <p class=" text-3xl font-medium text-red-500">必須</p>
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="addressCom" value="番地" class=" text-3xl font-bold sm:mr-[30px]" />
+                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                     </div>
-                    <div class="w-3/5">
+                    <div class="w-[60%] sm:w-[100%]">
                         <TextInput  id="addressCom" name="addressCom" v-model="form.addressCom" type="text"
                             autocomplete="addressCom" />
                         <InputError class="mt-2" :message="form.errors.addressCom" />
                     </div>
                 </div>
 
-                <div class="flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="apartmentNameCom" value="マンション名・部屋番号" class=" text-3xl font-bold" />
-                            <p class=" text-3xl font-medium text-slate-500">任意</p>
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="apartmentNameCom" value="マンション名・部屋番号" class=" text-3xl font-bold sm:mr-[30px]" />
+                            <p class=" text-3xl font-medium text-slate-500 min-w-[40px]">任意</p>
                         </div>
                     </div>
-                    <div class="w-3/5">
+                    <div class="w-[60%] sm:w-[100%]">
                         <TextInput  id="apartmentNameCom" name="apartmentNameCom" v-model="form.apartmentNameCom" type="text"
                             autocomplete="apartmentNameCom" />
                         <InputError class="mt-2" :message="form.errors.apartmentNameCom" />
                     </div>
                 </div>
 
-                <div class="flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="telephoneCom" value="電話番号" class=" text-3xl font-bold" />
-                            <p class=" text-3xl font-medium text-red-500">必須</p>
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="telephoneCom" value="電話番号" class=" text-3xl font-bold sm:mr-[30px]" />
+                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                     </div>
-                    <div class="w-3/5">
+                    <div class="w-[60%] sm:w-[100%]">
                         <TextInput  id="telephoneCom" name="telephoneCom" v-model="form.telephoneCom" type="number"
                             autocomplete="telephoneCom" />
                         <InputError class="mt-2" :message="form.errors.telephoneCom" />
@@ -443,50 +443,50 @@ const change = (e) => {
 
                 <h2 class="text-4xl my-20 text-center">口座番号</h2>
 
-                <div class="flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="bankName" value="銀行名" class=" text-3xl font-bold" />
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="bankName" value="銀行名" class=" text-3xl font-bold sm:mr-[30px]" />
                         </div>
                     </div>
-                    <div class="w-3/5">
+                    <div class="w-[60%] sm:w-[100%]">
                         <TextInput  id="bankName" name="bankName" v-model="form.bankName" type="text"
                             autocomplete="bankName" />
                         <InputError class="mt-2" :message="form.errors.bankName" />
                     </div>
                 </div>
 
-                <div class="flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="branchName" value="支店名" class=" text-3xl font-bold" />
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="branchName" value="支店名" class=" text-3xl font-bold sm:mr-[30px]" />
                         </div>
                     </div>
-                    <div class="w-3/5">
+                    <div class="w-[60%] sm:w-[100%]">
                         <TextInput  id="branchName" name="branchName" v-model="form.branchName" type="text"
                             autocomplete="branchName" />
                         <InputError class="mt-2" :message="form.errors.branchName" />
                     </div>
                 </div>
 
-                <div class="flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="teleBranch" value="支店番号" class=" text-3xl font-bold" />
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="teleBranch" value="支店番号" class=" text-3xl font-bold sm:mr-[30px]" />
                         </div>
                     </div>
-                    <div class="w-3/5">
+                    <div class="w-[60%] sm:w-[100%]">
                         <TextInput  id="teleBranch" name="teleBranch" v-model="form.teleBranch" type="text"
                             autocomplete="teleBranch" />
                         <InputError class="mt-2" :message="form.errors.teleBranch" />
                     </div>
                 </div>
 
-                <div class="flex justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="typeAccount" value="口座の種類" class=" text-3xl font-bold" />
-                            <p class=" text-3xl font-medium text-red-500">必須</p>
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="typeAccount" value="口座の種類" class=" text-3xl font-bold sm:mr-[30px]" />
+                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                     </div>
                     <div class=" w-3/5">
@@ -498,26 +498,26 @@ const change = (e) => {
                     </div>
                 </div>
 
-                <div class="flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="account" value="口座番号" class=" text-3xl font-bold" />
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="account" value="口座番号" class=" text-3xl font-bold sm:mr-[30px]" />
                         </div>
                     </div>
-                    <div class="w-3/5">
+                    <div class="w-[60%] sm:w-[100%]">
                         <TextInput  id="account" name="account" v-model="form.account" type="number"
                             autocomplete="account" />
                         <InputError class="mt-2" :message="form.errors.account" />
                     </div>
                 </div>
 
-                <div class="flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="accountName" value="口座名義(カナ)" class=" text-3xl font-bold" />
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="accountName" value="口座名義(カナ)" class=" text-3xl font-bold sm:mr-[30px]" />
                         </div>
                     </div>
-                    <div class="w-3/5">
+                    <div class="w-[60%] sm:w-[100%]">
                         <TextInput  id="accountName" name="accountName" v-model="form.accountName" type="number"
                             autocomplete="accountName" />
                         <InputError class="mt-2" :message="form.errors.accountName" />
@@ -526,14 +526,14 @@ const change = (e) => {
 
                 <h2 class="text-4xl my-20 text-center">個人情報の写真添付</h2>
 
-                <div class="flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24">
-                    <div class="grow">
-                        <div class="flex justify-between mb-8">
-                            <InputLabel for="accountName" value="必要書類の添付" class=" text-3xl font-bold" />
-                            <p class=" text-3xl font-medium text-red-500">必須</p>
+                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
+                    <div class="w-[35%] sm:w-[100%]">
+                        <div class="flex justify-between mb-8 sm:justify-start">
+                            <InputLabel for="accountName" value="必要書類の添付" class=" text-3xl font-bold sm:mr-[30px]" />
+                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                     </div>
-                    <div class="w-3/5">
+                    <div class="w-[60%] sm:w-[100%]">
                         <div class="flex flex-wrap gap-y-[1.5rem] mb-[2rem]">
                             <div class="w-1/2 text-3xl">セルフィー（自画撮り）</div>
                             <input class="w-1/2 text-xl" type="file" name="avatar" @change="form.avatar = $event.target.files[0]">
@@ -541,8 +541,8 @@ const change = (e) => {
                             <p class="text-gray-500 text-xl">* Please take a selfie with your ID and<br>send a photo of yourself at the same time.</p>
                         </div>
                         <div class="flex flex-wrap gap-y-[1.5rem]">
-                            <div class="w-1/2 text-3xl">運転免許証、または<br>顔写真付きの身分証明書</div>
-                            <div class="w-1/2 text-xl">
+                            <div class="w-1/2 text-3xl sm:w-full">運転免許証、または<br>顔写真付きの身分証明書</div>
+                            <div class="w-1/2 text-xl sm:w-full">
                                 <div class="mb-[1.5rem]">
                                     <span class=" font-medium text-red-500">※表面</span>
                                     <input type="file" name="frontCard" @change="form.frontCard = $event.target.files[0]">

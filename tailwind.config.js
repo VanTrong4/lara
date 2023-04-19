@@ -9,6 +9,11 @@ module.exports = {
     ],
 
     theme: {
+        screens: {
+            lg: {max: '1088px'},
+            md: {max: '769px'},
+            sm: {max: '600px'},
+        },
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],

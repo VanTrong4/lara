@@ -22285,347 +22285,347 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "container mt-11 mt-[10rem]"
+  "class": "container mt-[10rem]"
 };
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
   "class": "text-5xl font-bold text-gray-900"
 }, "本登録用のフォーム（お申し込み用）", -1 /* HOISTED */);
 var _hoisted_3 = ["onSubmit"];
 var _hoisted_4 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]"
 };
 var _hoisted_5 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_6 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_7 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-[100%]"
 };
 var _hoisted_8 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]"
 };
 var _hoisted_9 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_10 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_11 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-[100%]"
 };
 var _hoisted_12 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]"
 };
 var _hoisted_13 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_14 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_15 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-full"
 };
 var _hoisted_16 = {
   "class": "flex gap-10 w-full"
 };
 var _hoisted_17 = {
-  "class": "flex justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-x-24"
+  "class": "flex justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-x-[10%]"
 };
 var _hoisted_18 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_19 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_20 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-full"
 };
 var _hoisted_21 = {
   "class": "flex gap-20 w-full"
 };
 var _hoisted_22 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]"
 };
 var _hoisted_23 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_24 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "text-gray-500 text-xl"
 }, "※半角英数字でご入力", -1 /* HOISTED */);
 var _hoisted_26 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-[100%]"
 };
 var _hoisted_27 = {
-  "class": "flex justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-x-24"
+  "class": "flex justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-x-[10%]"
 };
 var _hoisted_28 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_29 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_30 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-full"
 };
 var _hoisted_31 = {
   "class": "flex gap-20 w-full"
 };
 var _hoisted_32 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]"
 };
 var _hoisted_33 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_34 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_35 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-[100%]"
 };
 var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "text-4xl my-20 text-center"
 }, "お住まいの情報", -1 /* HOISTED */);
 var _hoisted_37 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]"
 };
 var _hoisted_38 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_39 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_40 = {
-  "class": "w-3/5"
+  "class": "w-[55%]"
 };
 var _hoisted_41 = {
   "class": "flex w-full items-center gap-6"
 };
 var _hoisted_42 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]"
 };
 var _hoisted_43 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_44 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_45 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-[100%]"
 };
 var _hoisted_46 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]"
 };
 var _hoisted_47 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_48 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_49 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-[100%]"
 };
 var _hoisted_50 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]"
 };
 var _hoisted_51 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_52 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_53 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-[100%]"
 };
 var _hoisted_54 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]"
 };
 var _hoisted_55 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_56 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_57 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-[100%]"
 };
 var _hoisted_58 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "text-4xl my-20 text-center"
 }, "勤務先の情報", -1 /* HOISTED */);
 var _hoisted_59 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]"
 };
 var _hoisted_60 = {
-  "class": "grow"
+  "class": "w-[35%]"
 };
 var _hoisted_61 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_62 = {
-  "class": "w-3/5"
+  "class": "w-[55%]"
 };
 var _hoisted_63 = {
   "class": "flex w-full items-center gap-6"
 };
 var _hoisted_64 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]"
 };
 var _hoisted_65 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_66 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_67 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-[100%]"
 };
 var _hoisted_68 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]"
 };
 var _hoisted_69 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_70 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_71 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-[100%]"
 };
 var _hoisted_72 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]"
 };
 var _hoisted_73 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_74 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_75 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-[100%]"
 };
 var _hoisted_76 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]"
 };
 var _hoisted_77 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_78 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_79 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-[100%]"
 };
 var _hoisted_80 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]"
 };
 var _hoisted_81 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_82 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_83 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-[100%]"
 };
 var _hoisted_84 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "text-4xl my-20 text-center"
 }, "口座番号", -1 /* HOISTED */);
 var _hoisted_85 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]"
 };
 var _hoisted_86 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_87 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_88 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-[100%]"
 };
 var _hoisted_89 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]"
 };
 var _hoisted_90 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_91 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_92 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-[100%]"
 };
 var _hoisted_93 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]"
 };
 var _hoisted_94 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_95 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_96 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-[100%]"
 };
 var _hoisted_97 = {
-  "class": "flex justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-x-24"
+  "class": "flex justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-x-[10%]"
 };
 var _hoisted_98 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_99 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_100 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-full"
 };
 var _hoisted_101 = {
   "class": "flex gap-20 w-full"
 };
 var _hoisted_102 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]"
 };
 var _hoisted_103 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_104 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_105 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-[100%]"
 };
 var _hoisted_106 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]"
 };
 var _hoisted_107 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_108 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_109 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-[100%]"
 };
 var _hoisted_110 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]"
 };
 var _hoisted_111 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_112 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:mb-0"
 };
 var _hoisted_113 = {
-  "class": "w-3/5"
+  "class": "w-[55%] sm:w-[100%]"
 };
 var _hoisted_114 = {
-  "class": "flex flex-wrap gap-y-[1.5rem] mb-[2rem]"
+  "class": "flex flex-wrap gap-y-[1.5rem] mb-[2rem] sm:w-full"
 };
 var _hoisted_115 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "w-1/2 text-3xl"
+  "class": "w-1/2 text-3xl sm:w-full"
 }, "セルフィー（自画撮り）", -1 /* HOISTED */);
 var _hoisted_116 = ["src"];
 var _hoisted_117 = ["value"];
@@ -22633,10 +22633,10 @@ var _hoisted_118 = {
   "class": "flex flex-wrap gap-y-[1.5rem]"
 };
 var _hoisted_119 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "w-1/2 text-3xl"
+  "class": "w-1/2 text-3xl sm:w-full"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("運転免許証、または"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("顔写真付きの身分証明書")], -1 /* HOISTED */);
 var _hoisted_120 = {
-  "class": "w-1/2 text-xl"
+  "class": "w-1/2 text-xl sm:w-full"
 };
 var _hoisted_121 = {
   "class": "mb-[1.5rem]"
@@ -22661,7 +22661,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return _ctx.validate && _ctx.validate.apply(_ctx, arguments);
         }),
         onSubmit: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.submit, ["prevent"]),
-        "class": "w-full px-[4rem] py-[4rem] border border-slate-500 rounded-sm"
+        "class": "w-full px-[4rem] py-[4rem] border border-slate-500 rounded-sm sm-px-[1rem]"
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "name",
         value: "名前",
@@ -22819,16 +22819,19 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         value: "必要書類の添付",
         "class": "text-3xl font-bold"
       })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_113, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_114, [_hoisted_115, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+        "class": "w-[100px] h-auto",
         src: '../storage/image/' + $setup.form.avatarUser
       }, null, 8 /* PROPS */, _hoisted_116), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
         "class": "hidden",
         value: $setup.form.avatarUser
       }, null, 8 /* PROPS */, _hoisted_117)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_118, [_hoisted_119, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_120, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_121, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+        "class": "w-[100px] h-auto",
         src: '../storage/image/' + $setup.form.frontCardUser
       }, null, 8 /* PROPS */, _hoisted_122), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
         "class": "hidden",
         value: $setup.form.frontCardUser
       }, null, 8 /* PROPS */, _hoisted_123)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+        "class": "w-[100px] h-auto",
         src: '../storage/image/' + $setup.form.afterCardUser
       }, null, 8 /* PROPS */, _hoisted_124), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
         "class": "hidden",
@@ -22923,59 +22926,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "container mt-11 mt-[10rem]"
+  "class": "container mt-[10rem] px-[1.5rem]"
 };
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
   "class": "text-5xl font-bold text-gray-900"
 }, "本登録用のフォーム（お申し込み用）", -1 /* HOISTED */);
 var _hoisted_3 = ["onSubmit"];
 var _hoisted_4 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]"
 };
 var _hoisted_5 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_6 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-3xl font-medium text-red-500"
+  "class": "text-3xl font-medium text-red-500 min-w-[40px]"
 }, "必須", -1 /* HOISTED */);
 var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "text-gray-500 text-xl"
 }, "※お名前を漢字でご入力", -1 /* HOISTED */);
 var _hoisted_9 = {
-  "class": "w-3/5"
+  "class": "w-[60%] sm:w-[100%]"
 };
 var _hoisted_10 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]"
 };
 var _hoisted_11 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_12 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-3xl font-medium text-red-500"
+  "class": "text-3xl font-medium text-red-500 min-w-[40px]"
 }, "必須", -1 /* HOISTED */);
 var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "text-gray-500 text-xl"
 }, "※お名前のフリガナをご入力", -1 /* HOISTED */);
 var _hoisted_15 = {
-  "class": "w-3/5"
+  "class": "w-[60%] sm:w-[100%]"
 };
 var _hoisted_16 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]"
 };
 var _hoisted_17 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_18 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-3xl font-medium text-red-500"
+  "class": "text-3xl font-medium text-red-500 min-w-[40px]"
 }, "必須", -1 /* HOISTED */);
 var _hoisted_20 = {
   "class": "w-3/5"
@@ -22984,16 +22987,16 @@ var _hoisted_21 = {
   "class": "flex gap-10 w-full"
 };
 var _hoisted_22 = {
-  "class": "flex justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-[5%]"
 };
 var _hoisted_23 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_24 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-3xl font-medium text-red-500"
+  "class": "text-3xl font-medium text-red-500 min-w-[40px]"
 }, "必須", -1 /* HOISTED */);
 var _hoisted_26 = {
   "class": "w-3/5"
@@ -23002,34 +23005,34 @@ var _hoisted_27 = {
   "class": "flex gap-20 w-full"
 };
 var _hoisted_28 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]"
 };
 var _hoisted_29 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_30 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-3xl font-medium text-red-500"
+  "class": "text-3xl font-medium text-red-500 min-w-[40px]"
 }, "必須", -1 /* HOISTED */);
 var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "text-gray-500 text-xl"
 }, "※半角英数字でご入力", -1 /* HOISTED */);
 var _hoisted_33 = {
-  "class": "w-3/5"
+  "class": "w-[60%] sm:w-[100%]"
 };
 var _hoisted_34 = {
-  "class": "flex justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-[5%]"
 };
 var _hoisted_35 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_36 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-3xl font-medium text-red-500"
+  "class": "text-3xl font-medium text-red-500 min-w-[40px]"
 }, "必須", -1 /* HOISTED */);
 var _hoisted_38 = {
   "class": "w-3/5"
@@ -23038,58 +23041,58 @@ var _hoisted_39 = {
   "class": "flex gap-20 w-full"
 };
 var _hoisted_40 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]"
 };
 var _hoisted_41 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_42 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_43 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-3xl font-medium text-slate-500"
+  "class": "text-3xl font-medium text-slate-500 min-w-[40px]"
 }, "任意", -1 /* HOISTED */);
 var _hoisted_44 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "text-gray-500 text-xl"
 }, "※半角英数字で8文字以上でご入力", -1 /* HOISTED */);
 var _hoisted_45 = {
-  "class": "w-3/5"
+  "class": "w-[60%] sm:w-[100%]"
 };
 var _hoisted_46 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "text-4xl my-20 text-center"
 }, "お住まいの情報", -1 /* HOISTED */);
 var _hoisted_47 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]"
 };
 var _hoisted_48 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_49 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-3xl font-medium text-red-500"
+  "class": "text-3xl font-medium text-red-500 min-w-[40px]"
 }, "必須", -1 /* HOISTED */);
 var _hoisted_51 = {
-  "class": "w-3/5"
+  "class": "w-[60%] sm:w-[100%]"
 };
 var _hoisted_52 = {
   "class": "flex w-full items-center gap-6"
 };
 var _hoisted_53 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]"
 };
 var _hoisted_54 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_55 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_56 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-3xl font-medium text-red-500"
+  "class": "text-3xl font-medium text-red-500 min-w-[40px]"
 }, "必須", -1 /* HOISTED */);
 var _hoisted_57 = {
-  "class": "w-3/5"
+  "class": "w-[60%] sm:w-[100%]"
 };
 var _hoisted_58 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "",
@@ -23239,85 +23242,85 @@ var _hoisted_105 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElemen
 }, "沖縄県", -1 /* HOISTED */);
 var _hoisted_106 = [_hoisted_58, _hoisted_59, _hoisted_60, _hoisted_61, _hoisted_62, _hoisted_63, _hoisted_64, _hoisted_65, _hoisted_66, _hoisted_67, _hoisted_68, _hoisted_69, _hoisted_70, _hoisted_71, _hoisted_72, _hoisted_73, _hoisted_74, _hoisted_75, _hoisted_76, _hoisted_77, _hoisted_78, _hoisted_79, _hoisted_80, _hoisted_81, _hoisted_82, _hoisted_83, _hoisted_84, _hoisted_85, _hoisted_86, _hoisted_87, _hoisted_88, _hoisted_89, _hoisted_90, _hoisted_91, _hoisted_92, _hoisted_93, _hoisted_94, _hoisted_95, _hoisted_96, _hoisted_97, _hoisted_98, _hoisted_99, _hoisted_100, _hoisted_101, _hoisted_102, _hoisted_103, _hoisted_104, _hoisted_105];
 var _hoisted_107 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]"
 };
 var _hoisted_108 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_109 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_110 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-3xl font-medium text-red-500"
+  "class": "text-3xl font-medium text-red-500 min-w-[40px]"
 }, "必須", -1 /* HOISTED */);
 var _hoisted_111 = {
-  "class": "w-3/5"
+  "class": "w-[60%] sm:w-[100%]"
 };
 var _hoisted_112 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]"
 };
 var _hoisted_113 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_114 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_115 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-3xl font-medium text-red-500"
+  "class": "text-3xl font-medium text-red-500 min-w-[40px]"
 }, "必須", -1 /* HOISTED */);
 var _hoisted_116 = {
-  "class": "w-3/5"
+  "class": "w-[60%] sm:w-[100%]"
 };
 var _hoisted_117 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]"
 };
 var _hoisted_118 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_119 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_120 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-3xl font-medium text-slate-500"
+  "class": "text-3xl font-medium text-slate-500 min-w-[40px]"
 }, "任意", -1 /* HOISTED */);
 var _hoisted_121 = {
-  "class": "w-3/5"
+  "class": "w-[60%] sm:w-[100%]"
 };
 var _hoisted_122 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "text-4xl my-20 text-center"
 }, "勤務先の情報", -1 /* HOISTED */);
 var _hoisted_123 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]"
 };
 var _hoisted_124 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_125 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_126 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-3xl font-medium text-red-500"
+  "class": "text-3xl font-medium text-red-500 min-w-[40px]"
 }, "必須", -1 /* HOISTED */);
 var _hoisted_127 = {
-  "class": "w-3/5"
+  "class": "w-[60%] sm:w-[100%]"
 };
 var _hoisted_128 = {
   "class": "flex w-full items-center gap-6"
 };
 var _hoisted_129 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]"
 };
 var _hoisted_130 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_131 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_132 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-3xl font-medium text-red-500"
+  "class": "text-3xl font-medium text-red-500 min-w-[40px]"
 }, "必須", -1 /* HOISTED */);
 var _hoisted_133 = {
-  "class": "w-3/5"
+  "class": "w-[60%] sm:w-[100%]"
 };
 var _hoisted_134 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "",
@@ -23467,115 +23470,115 @@ var _hoisted_181 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElemen
 }, "沖縄県", -1 /* HOISTED */);
 var _hoisted_182 = [_hoisted_134, _hoisted_135, _hoisted_136, _hoisted_137, _hoisted_138, _hoisted_139, _hoisted_140, _hoisted_141, _hoisted_142, _hoisted_143, _hoisted_144, _hoisted_145, _hoisted_146, _hoisted_147, _hoisted_148, _hoisted_149, _hoisted_150, _hoisted_151, _hoisted_152, _hoisted_153, _hoisted_154, _hoisted_155, _hoisted_156, _hoisted_157, _hoisted_158, _hoisted_159, _hoisted_160, _hoisted_161, _hoisted_162, _hoisted_163, _hoisted_164, _hoisted_165, _hoisted_166, _hoisted_167, _hoisted_168, _hoisted_169, _hoisted_170, _hoisted_171, _hoisted_172, _hoisted_173, _hoisted_174, _hoisted_175, _hoisted_176, _hoisted_177, _hoisted_178, _hoisted_179, _hoisted_180, _hoisted_181];
 var _hoisted_183 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]"
 };
 var _hoisted_184 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_185 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_186 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-3xl font-medium text-red-500"
+  "class": "text-3xl font-medium text-red-500 min-w-[40px]"
 }, "必須", -1 /* HOISTED */);
 var _hoisted_187 = {
-  "class": "w-3/5"
+  "class": "w-[60%] sm:w-[100%]"
 };
 var _hoisted_188 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]"
 };
 var _hoisted_189 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_190 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_191 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-3xl font-medium text-red-500"
+  "class": "text-3xl font-medium text-red-500 min-w-[40px]"
 }, "必須", -1 /* HOISTED */);
 var _hoisted_192 = {
-  "class": "w-3/5"
+  "class": "w-[60%] sm:w-[100%]"
 };
 var _hoisted_193 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]"
 };
 var _hoisted_194 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_195 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_196 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-3xl font-medium text-slate-500"
+  "class": "text-3xl font-medium text-slate-500 min-w-[40px]"
 }, "任意", -1 /* HOISTED */);
 var _hoisted_197 = {
-  "class": "w-3/5"
+  "class": "w-[60%] sm:w-[100%]"
 };
 var _hoisted_198 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]"
 };
 var _hoisted_199 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_200 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_201 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-3xl font-medium text-red-500"
+  "class": "text-3xl font-medium text-red-500 min-w-[40px]"
 }, "必須", -1 /* HOISTED */);
 var _hoisted_202 = {
-  "class": "w-3/5"
+  "class": "w-[60%] sm:w-[100%]"
 };
 var _hoisted_203 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "text-4xl my-20 text-center"
 }, "口座番号", -1 /* HOISTED */);
 var _hoisted_204 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]"
 };
 var _hoisted_205 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_206 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_207 = {
-  "class": "w-3/5"
+  "class": "w-[60%] sm:w-[100%]"
 };
 var _hoisted_208 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]"
 };
 var _hoisted_209 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_210 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_211 = {
-  "class": "w-3/5"
+  "class": "w-[60%] sm:w-[100%]"
 };
 var _hoisted_212 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]"
 };
 var _hoisted_213 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_214 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_215 = {
-  "class": "w-3/5"
+  "class": "w-[60%] sm:w-[100%]"
 };
 var _hoisted_216 = {
-  "class": "flex justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-[5%]"
 };
 var _hoisted_217 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_218 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_219 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-3xl font-medium text-red-500"
+  "class": "text-3xl font-medium text-red-500 min-w-[40px]"
 }, "必須", -1 /* HOISTED */);
 var _hoisted_220 = {
   "class": "w-3/5"
@@ -23584,46 +23587,46 @@ var _hoisted_221 = {
   "class": "flex gap-20 w-full"
 };
 var _hoisted_222 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]"
 };
 var _hoisted_223 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_224 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_225 = {
-  "class": "w-3/5"
+  "class": "w-[60%] sm:w-[100%]"
 };
 var _hoisted_226 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]"
 };
 var _hoisted_227 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_228 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_229 = {
-  "class": "w-3/5"
+  "class": "w-[60%] sm:w-[100%]"
 };
 var _hoisted_230 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "text-4xl my-20 text-center"
 }, "個人情報の写真添付", -1 /* HOISTED */);
 var _hoisted_231 = {
-  "class": "flex justify-between p-[2rem] border-t border-t-slate-400 gap-x-24"
+  "class": "flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]"
 };
 var _hoisted_232 = {
-  "class": "grow"
+  "class": "w-[35%] sm:w-[100%]"
 };
 var _hoisted_233 = {
-  "class": "flex justify-between mb-8"
+  "class": "flex justify-between mb-8 sm:justify-start"
 };
 var _hoisted_234 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-3xl font-medium text-red-500"
+  "class": "text-3xl font-medium text-red-500 min-w-[40px]"
 }, "必須", -1 /* HOISTED */);
 var _hoisted_235 = {
-  "class": "w-3/5"
+  "class": "w-[60%] sm:w-[100%]"
 };
 var _hoisted_236 = {
   "class": "flex flex-wrap gap-y-[1.5rem] mb-[2rem]"
@@ -23638,10 +23641,10 @@ var _hoisted_239 = {
   "class": "flex flex-wrap gap-y-[1.5rem]"
 };
 var _hoisted_240 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "w-1/2 text-3xl"
+  "class": "w-1/2 text-3xl sm:w-full"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("運転免許証、または"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("顔写真付きの身分証明書")], -1 /* HOISTED */);
 var _hoisted_241 = {
-  "class": "w-1/2 text-xl"
+  "class": "w-1/2 text-xl sm:w-full"
 };
 var _hoisted_242 = {
   "class": "mb-[1.5rem]"
@@ -23669,12 +23672,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return _ctx.validate && _ctx.validate.apply(_ctx, arguments);
         }),
         onSubmit: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.submit, ["prevent"]),
-        "class": "w-full px-[4rem] py-[4rem] border border-slate-500 rounded-sm",
+        "class": "w-full px-[4rem] py-[4rem] border border-slate-500 rounded-sm sm:px-[1rem]",
         enctype: "multipart/form-data"
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "name",
         value: "名前",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       }), _hoisted_7]), _hoisted_8]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
         id: "name",
         modelValue: $setup.form.name,
@@ -23689,7 +23692,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "Furigana",
         value: "フリガナ",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       }), _hoisted_13]), _hoisted_14]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
         id: "Furigana",
         modelValue: $setup.form.Furigana,
@@ -23704,7 +23707,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "",
         value: "生年月日",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       }), _hoisted_19])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SelectInput"], {
         min: "1900",
         max: "2004",
@@ -23738,7 +23741,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "gender",
         value: "生年月日",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       }), _hoisted_25])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["RadioInput"], {
         modelValue: $setup.form.gender,
         "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
@@ -23761,7 +23764,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "email",
         value: "メールアドレス",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       }), _hoisted_31]), _hoisted_32]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
         id: "email",
         modelValue: $setup.form.email,
@@ -23776,7 +23779,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_34, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "preferContact",
         value: "ご希望の連絡方法",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       }), _hoisted_37])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["RadioInput"], {
         modelValue: $setup.form.preferContact,
         "onUpdate:modelValue": _cache[8] || (_cache[8] = function ($event) {
@@ -23799,7 +23802,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_41, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_42, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "LINEID",
         value: "LINE ID",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       }), _hoisted_43]), _hoisted_44]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_45, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
         id: "LINEID",
         name: "LINEID",
@@ -23815,7 +23818,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), _hoisted_46, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_47, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_48, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_49, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "postCodeBef",
         value: "郵便番号",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       }), _hoisted_50])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_51, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_52, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
         "class": "w-1/4",
         size: "4",
@@ -23844,7 +23847,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_53, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_54, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_55, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "district",
         value: "都道府県",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       }), _hoisted_56])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_57, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
         name: "district",
         "onUpdate:modelValue": _cache[13] || (_cache[13] = function ($event) {
@@ -23857,7 +23860,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_107, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_108, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_109, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "city",
         value: "市区町村",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       }), _hoisted_110])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_111, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
         id: "city",
         name: "city",
@@ -23876,7 +23879,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_112, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_113, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_114, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "address",
         value: "番地",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       }), _hoisted_115])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_116, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
         id: "address",
         name: "address",
@@ -23892,7 +23895,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_117, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_118, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_119, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "apartmentName",
         value: "マンション名・部屋番号",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       }), _hoisted_120])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_121, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
         id: "apartmentName",
         name: "apartmentName",
@@ -23908,7 +23911,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), _hoisted_122, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_123, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_124, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_125, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "postCodeComBef",
         value: "郵便番号",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       }), _hoisted_126])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_127, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_128, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
         "class": "w-1/4",
         size: "4",
@@ -23937,7 +23940,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_129, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_130, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_131, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "districtCom",
         value: "都道府県",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       }), _hoisted_132])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_133, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
         name: "districtCom",
         "onUpdate:modelValue": _cache[20] || (_cache[20] = function ($event) {
@@ -23950,7 +23953,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_183, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_184, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_185, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "cityCom",
         value: "市区町村",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       }), _hoisted_186])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_187, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
         id: "cityCom",
         name: "cityCom",
@@ -23966,7 +23969,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_188, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_189, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_190, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "addressCom",
         value: "番地",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       }), _hoisted_191])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_192, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
         id: "addressCom",
         name: "addressCom",
@@ -23982,7 +23985,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_193, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_194, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_195, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "apartmentNameCom",
         value: "マンション名・部屋番号",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       }), _hoisted_196])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_197, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
         id: "apartmentNameCom",
         name: "apartmentNameCom",
@@ -23998,7 +24001,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_198, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_199, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_200, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "telephoneCom",
         value: "電話番号",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       }), _hoisted_201])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_202, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
         id: "telephoneCom",
         name: "telephoneCom",
@@ -24014,7 +24017,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), _hoisted_203, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_204, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_205, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_206, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "bankName",
         value: "銀行名",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_207, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
         id: "bankName",
         name: "bankName",
@@ -24030,7 +24033,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_208, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_209, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_210, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "branchName",
         value: "支店名",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_211, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
         id: "branchName",
         name: "branchName",
@@ -24046,7 +24049,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_212, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_213, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_214, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "teleBranch",
         value: "支店番号",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_215, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
         id: "teleBranch",
         name: "teleBranch",
@@ -24062,7 +24065,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_216, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_217, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_218, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "typeAccount",
         value: "口座の種類",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       }), _hoisted_219])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_220, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_221, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["RadioInput"], {
         modelValue: $setup.form.typeAccount,
         "onUpdate:modelValue": _cache[28] || (_cache[28] = function ($event) {
@@ -24085,7 +24088,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_222, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_223, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_224, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "account",
         value: "口座番号",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_225, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
         id: "account",
         name: "account",
@@ -24101,7 +24104,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_226, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_227, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_228, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "accountName",
         value: "口座名義(カナ)",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_229, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
         id: "accountName",
         name: "accountName",
@@ -24117,7 +24120,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["message"])])]), _hoisted_230, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_231, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_232, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_233, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputLabel"], {
         "for": "accountName",
         value: "必要書類の添付",
-        "class": "text-3xl font-bold"
+        "class": "text-3xl font-bold sm:mr-[30px]"
       }), _hoisted_234])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_235, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_236, [_hoisted_237, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
         "class": "w-1/2 text-xl",
         type: "file",
