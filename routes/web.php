@@ -1,8 +1,14 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\MailControl;
+use App\Http\Controllers\FormController;
+use App\Http\Controllers\FormConfirmController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,11 +24,24 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
+        'canRegister' => Route::has('register')
     ]);
 });
+
+Route::get('/thanks', function () {
+    return Inertia::render('Thanks',[
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+    ]);
+});
+
+Route::get('/form', [FormController::class,'form'])->middleware(['auth', 'verified'])->name('form');
+Route::post('/form-confirm', [FormConfirmController::class,'formConfirm'])->middleware(['auth', 'verified'])->name('form-confirm');
+Route::post('/thanks-sender', [ProfileController::class, 'update'])->middleware(['auth', 'verified'])->name('thanks-sender');
+Route::get('/thanks-sender', function () {
+    return Inertia::render('Thanks');
+})->middleware(['auth', 'verified'])->name('thanks-sender');
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

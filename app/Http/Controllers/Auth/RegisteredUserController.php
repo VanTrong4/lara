@@ -36,20 +36,39 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'email' => 'required|string|email|max:255|unique:'.User::class,
+            'password' => ['required', Rules\Password::defaults()],
+            'Furigana' => 'required|string|max:255',
+            'year' => 'required',
+            'month' => 'required',
+            'day' => 'required',
+            'gender' => 'required',
+            'terms' => 'required',
+            'emailConfirm' => 'required|string|email|max:255',
+            'password_confirmation' => 'same:password'
+        ],
+        [
+            'required' => 'こちらは必須入力となります。',
+            'email' => '※正しい書式でご記入ください',
+            'gender.required' => '1つのみ選択可能'
         ]);
-
+        if(request()->has('prevalidate')) {
+            return redirect()->back();
+        }
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'Furigana' => $request->Furigana,
+            'year' => $request->year,
+            'month' => $request->month,
+            'day' => $request->day,
+            'gender' => $request->gender,
+            'emailConfirm' => $request->emailConfirm,
         ]);
 
         event(new Registered($user));
 
-        Auth::login($user);
-
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('/thanks');
     }
 }

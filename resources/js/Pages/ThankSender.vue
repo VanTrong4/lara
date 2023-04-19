@@ -1,0 +1,59 @@
+<script setup>
+import { Head, Link } from '@inertiajs/vue3';
+
+defineProps({
+    canLogin: {
+        type: Boolean,
+    },
+    canRegister: {
+        type: Boolean,
+    }
+});
+</script>
+
+<template>
+    <Head title="Thanks" />
+
+    <div
+        class="flex justify-center items-center flex-col h-full"
+    >
+        <div v-if="canLogin" class="sm:fixed sm:top-0 sm:right-0 p-6 text-right text-3xl">
+            <Link
+                v-if="$page.props.auth.user"
+                :href="route('dashboard')"
+                class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                >Dashboard</Link
+            >
+
+            <template v-else>
+                <Link
+                    :href="route('login')"
+                    class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                    >Log in</Link
+                >
+
+                <Link
+                    v-if="canRegister"
+                    :href="route('register')"
+                    class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                    >Register</Link
+                >
+            </template>
+        </div>
+        <h1 class="text-4xl mb-10">THANKS SENDER</h1>
+        <div class="flex flex-col items-center">
+            <div class="mb-4 text-3xl font-bold text-center leading-normal">
+                本登録+お申し込み<br>
+                送信完了<br>
+                この度はお申し込み頂き誠にありがとうございます。<br>
+                ご記入頂いた情報は送信されました。<br>
+                内容を確認のうえ、担当者よりご連絡させて頂きます。<br>
+                しばらくお待ちください。
+            </div>
+            <Link :href="route('dashboard')" class=" mt-10 text-3xl p-6 bg-black text-slate-100 rounded-md">TOPへ戻る</Link>
+        </div>
+    </div>
+</template>
+
+<style>
+</style>
