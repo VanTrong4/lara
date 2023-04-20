@@ -32,25 +32,6 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        if($request->hasFile("avatarUser")){
-            $file = $request->avatarUser;
-            $file_name = $file->hashName();
-            $file->storeAs('public/image',$file_name);
-            $request->merge(['avatarUser'=>$file_name]);
-        }
-        if($request->hasFile("frontCardUser")){
-            $file = $request->frontCardUser;
-            $file_name = $file->hashName();
-            $file->storeAs('public/image',$file_name);
-            $request->merge(['frontCardUser'=>$file_name]);
-        }
-        if($request->hasFile("afterCardUser")){
-            $file = $request->afterCardUser;
-            $file_name = $file->hashName();
-            $file->storeAs('public/image',$file_name);
-            $request->merge(['afterCardUser'=>$file_name]);
-        }
-        
         $request->user()->fill($request->validated());
 
         $request->user()->save();

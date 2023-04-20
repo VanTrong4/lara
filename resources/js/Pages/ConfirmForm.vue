@@ -14,78 +14,65 @@ let inputData ;
 let avatarUser;
 let frontCardUser;
 let afterCardUser;
+    avatarUser = JSON.parse(sessionStorage.getItem("avatar"))
+    frontCardUser = JSON.parse(sessionStorage.getItem("frontCard"))
+    afterCardUser = JSON.parse(sessionStorage.getItem("afterCard"))
 
 
 if(sessionStorage.getItem("inputUser")){
     inputData = JSON.parse(sessionStorage.getItem("inputUser"))
-    avatarUser = JSON.parse(sessionStorage.getItem("avatar"))
-    frontCardUser = JSON.parse(sessionStorage.getItem("frontCard"))
-    afterCardUser = JSON.parse(sessionStorage.getItem("afterCard"))
 }
 
-const form = useForm({
-    name: props.dataForm?.name||inputData.name,
-    Furigana: props.dataForm?.Furigana||inputData.Furigana,
-    year: props.dataForm?.year||inputData.year,
-    month: props.dataForm?.month||inputData.month,
-    day: props.dataForm?.day||inputData.day,
-    gender: props.dataForm?.gender||inputData.gender,
-    email: props.dataForm?.email||inputData.email,
-    preferContact: props.dataForm?.preferContact||inputData.preferContact,
-    LINEID: props.dataForm?.LINEID||inputData.LINEID,
-    postCodeBef: props.dataForm?.postCodeBef||inputData.postCodeBef,
-    postCodeAfter: props.dataForm?.postCodeAfter||inputData.postCodeAfter,
-    district: props.dataForm?.district||inputData.district,
-    city: props.dataForm?.city||inputData.city,
-    address: props.dataForm?.address||inputData.address,
-    apartmentName: props.dataForm?.apartmentName||inputData.apartmentName,
-    postCodeComBef: props.dataForm?.postCodeComBef||inputData.postCodeComBef,
-    postCodeComAfter: props.dataForm?.postCodeComAfter||inputData.postCodeComAfter,
-    districtCom: props.dataForm?.districtCom||inputData.districtCom,
-    cityCom: props.dataForm?.cityCom||inputData.cityCom,
-    addressCom: props.dataForm?.addressCom||inputData.addressCom,
-    apartmentNameCom: props.dataForm?.apartmentNameCom||inputData.apartmentNameCom,
-    telephoneCom: props.dataForm?.telephoneCom||inputData.telephoneCom,
-    bankName: props.dataForm?.bankName||inputData.bankName,
-    branchName: props.dataForm?.branchName||inputData.branchName,
-    teleBranch: props.dataForm?.teleBranch||inputData.teleBranch,
-    typeAccount: props.dataForm?.typeAccount||inputData.typeAccount,
-    account: props.dataForm?.account||inputData.account,
-    accountName: props.dataForm?.accountName||inputData.accountName,
-    avatarUser: inputData.avatar,
-    frontCardUser: inputData.frontCard,
-    afterCardUser: inputData.afterCard,
-});
 
+const form = useForm({
+    name: props.dataForm?.name||inputData?.name,
+    Furigana: props.dataForm?.Furigana||inputData?.Furigana,
+    year: props.dataForm?.year||inputData?.year,
+    month: props.dataForm?.month||inputData?.month,
+    day: props.dataForm?.day||inputData?.day,
+    gender: props.dataForm?.gender||inputData?.gender,
+    email: props.dataForm?.email||inputData?.email,
+    preferContact: props.dataForm?.preferContact||inputData?.preferContact,
+    LINEID: props.dataForm?.LINEID||inputData?.LINEID,
+    postCodeBef: props.dataForm?.postCodeBef||inputData?.postCodeBef,
+    postCodeAfter: props.dataForm?.postCodeAfter||inputData?.postCodeAfter,
+    district: props.dataForm?.district||inputData?.district,
+    city: props.dataForm?.city||inputData?.city,
+    address: props.dataForm?.address||inputData?.address,
+    apartmentName: props.dataForm?.apartmentName||inputData?.apartmentName,
+    postCodeComBef: props.dataForm?.postCodeComBef||inputData?.postCodeComBef,
+    postCodeComAfter: props.dataForm?.postCodeComAfter||inputData?.postCodeComAfter,
+    districtCom: props.dataForm?.districtCom||inputData?.districtCom,
+    cityCom: props.dataForm?.cityCom||inputData?.cityCom,
+    addressCom: props.dataForm?.addressCom||inputData?.addressCom,
+    apartmentNameCom: props.dataForm?.apartmentNameCom||inputData?.apartmentNameCom,
+    telephoneCom: props.dataForm?.telephoneCom||inputData?.telephoneCom,
+    bankName: props.dataForm?.bankName||inputData?.bankName,
+    branchName: props.dataForm?.branchName||inputData?.branchName,
+    teleBranch: props.dataForm?.teleBranch||inputData?.teleBranch,
+    typeAccount: props.dataForm?.typeAccount||inputData?.typeAccount,
+    account: props.dataForm?.account||inputData?.account,
+    accountName: props.dataForm?.accountName||inputData?.accountName,
+    avatarUser: props.dataForm?.avatarUser||inputData?.avatarUser,
+    frontCardUser: props.dataForm?.frontCardUser||inputData?.frontCardUser,
+    afterCardUser: props.dataForm?.afterCardUser||inputData?.afterCardUser,
+});
 
 const submit = () => {
     NProgress.start();
-    form.avatarUser = getPhoto(avatarUser);
-    form.frontCardUser = getPhoto(frontCardUser);
-    form.afterCardUser = getPhoto(afterCardUser);
-    console.log(form.afterCardUser);
     form.post(route('thanks-sender'), {
         onFinish: () => {
             NProgress.done();
-console.log(form);
-            // sessionStorage.removeItem("inputUser");
-            // sessionStorage.removeItem("avatar");
-            // sessionStorage.removeItem("frontCard");
-            // sessionStorage.removeItem("afterCard");
+            sessionStorage.removeItem("inputUser");
+            sessionStorage.removeItem("avatar");
+            sessionStorage.removeItem("frontCard");
+            sessionStorage.removeItem("afterCard");
         },
     });
 };
 
 const backForm =() => {
     history.back();
-}
-
-function getPhoto(img64) {
-   let base64Parts = img64.split(",");
-   let fileFormat = base64Parts[0].split(";")[1];
-   let fileContent = base64Parts[1];
-   let file = new File([fileContent], `${img64}-${inputData.email}`, {type: fileFormat});
-   return file;
 }
 
 </script>

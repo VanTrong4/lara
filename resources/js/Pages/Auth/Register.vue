@@ -122,7 +122,7 @@ const submit = () => {
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class=" w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8">
-                            <InputLabel for="Furigana" value="メールアドレス（確認用）" class=" text-3xl font-bold sm:mr-[30px]" />
+                            <InputLabel for="emailConfirm" value="メールアドレス（確認用）" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-red-500 min-w-[40px]">性別</p>
                         </div>
                         <p class=" text-gray-500 text-xl">※上記と同じメールアドレスを再度ご入力</p>
@@ -152,7 +152,7 @@ const submit = () => {
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
                     <div class=" w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8">
-                            <InputLabel for="password_confirmation" value="メールアドレス（確認用）" class=" text-3xl font-bold sm:mr-[30px]" />
+                            <InputLabel for="password_confirmation" value="パスワード（確認用）" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-red-500 min-w-[40px]">性別</p>
                         </div>
                         <p class=" text-gray-500 text-xl">※上記と同じパスワードを再度ご入力</p>

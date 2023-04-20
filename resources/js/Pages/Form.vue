@@ -47,13 +47,17 @@ const form = useForm({
     avatar:'',
     frontCard:'',
     afterCard:'',
+    avatarUser: '',
+    frontCardUser: '',
+    afterCardUser: '',
 });
 
 
 const submit = () => {
     form.post(route('form-confirm'), {
         onFinish: () => {
-            sessionStorage.setItem('inputUser',JSON.stringify(form))},
+            sessionStorage.setItem('inputUser',JSON.stringify(form))
+        },
     });
     
 };
@@ -61,11 +65,25 @@ const submit = () => {
 
 const change = (e) => {
     console.log(e.target.value);
+    let name =e.target.name;
+    form[name] = e.target.value;
+};
+
+const setValue = () => {
+    form.district = document.getElementById('district')?.value;
+    form.city = document.getElementById('city')?.value;
+    form.address = document.getElementById('address')?.value;
+};
+
+const setValue2 = () => {
+    form.districtCom = document.getElementById('districtCom')?.value;
+    form.cityCom = document.getElementById('cityCom')?.value;
+    form.addressCom = document.getElementById('addressCom')?.value;
 };
 
 const addImage = (e) =>{
+    form[`${e.target.name}User`] = e.target.files[0].name;
     form[e.target.name] = e.target.files[0];
-    console.log(e.target.files[0]);
 
     const reader = new FileReader();
     reader.readAsDataURL(e.target.files[0])
@@ -75,7 +93,13 @@ const addImage = (e) =>{
     });
 }
 
-
+window.onload = function()
+{
+            sessionStorage.removeItem("inputUser");
+            sessionStorage.removeItem("avatar");
+            sessionStorage.removeItem("frontCard");
+            sessionStorage.removeItem("afterCard");
+}
 
 </script>
 
@@ -207,7 +231,7 @@ const addImage = (e) =>{
                             -
                             <TextInput  class="w-1/4" id="postCodeAfter" name="postCodeAfter" size="5" v-model="form.postCodeAfter"
                                 maxlength="4" type="number"
-                                onkeyup="AjaxZip3.zip2addr('postCodeBef','postCodeAfter','district','city','address');"/>
+                                onkeyup="AjaxZip3.zip2addr('postCodeBef','postCodeAfter','district','city','address');" @focusout="setValue()"/>
                         </div>
                         <InputError class="mt-2" :message="form.errors.postCodeBef||form.errors.postCodeAfter" />
                     </div>
@@ -221,7 +245,7 @@ const addImage = (e) =>{
                         </div>
                     </div>
                     <div class="w-[60%] sm:w-[100%]">
-                        <select  name="district" v-model="form.district"
+                        <select id="district" name="district" v-model="form.district"
                             class="leading-[1.3] focus:border-indigo-500 rounded-md shadow-sm mt-1 block h-[6.4rem] bg-gray-100 text-3xl border-none w-1/2">
                             <option value="" selected disabled>都道府県</option>
                             <option value="北海道">北海道</option>
@@ -284,7 +308,7 @@ const addImage = (e) =>{
                         </div>
                     </div>
                     <div class="w-[60%] sm:w-[100%]">
-                        <TextInput  id="city" name="city" v-model="form.city" type="text" autocomplete="city" @input="change($event)" />
+                        <TextInput  id="city" name="city" v-model="form.city" type="text" autocomplete="city" />
                         <InputError class="mt-2" :message="form.errors.city" />
                     </div>
                 </div>
@@ -297,7 +321,7 @@ const addImage = (e) =>{
                         </div>
                     </div>
                     <div class="w-[60%] sm:w-[100%]">
-                        <TextInput  id="address" name="address" v-model="form.address" type="text" autocomplete="address" />
+                        <TextInput  id="address" name="address" v-model="form.address" type="text" autocomplete="address"  />
                         <InputError class="mt-2" :message="form.errors.address" />
                     </div>
                 </div>
@@ -331,7 +355,7 @@ const addImage = (e) =>{
                             -
                             <TextInput  class="w-1/4" id="postCode" name="postCodeComAfter" size="5"  v-model="form.postCodeComAfter"
                                 maxlength="4" type="number"
-                                onkeyup="AjaxZip3.zip2addr('postCodeComBef','postCodeComAfter','districtCom','cityCom','addressCom');"/>
+                                onkeyup="AjaxZip3.zip2addr('postCodeComBef','postCodeComAfter','districtCom','cityCom','addressCom');" @focusout="setValue2()"/>
                         </div>
                         <InputError class="mt-2" :message="form.errors.postCodeComBef||form.errors.postCodeComBef" />
                     </div>
@@ -345,7 +369,7 @@ const addImage = (e) =>{
                         </div>
                     </div>
                     <div class="w-[60%] sm:w-[100%]">
-                        <select  name="districtCom" v-model="form.districtCom"
+                        <select id="districtCom" name="districtCom" v-model="form.districtCom"
                             class="leading-[1.3] focus:border-indigo-500 rounded-md shadow-sm mt-1 block h-[6.4rem] bg-gray-100 text-3xl border-none w-1/2">
                             <option value="" selected disabled>都道府県</option>
                             <option value="北海道">北海道</option>
