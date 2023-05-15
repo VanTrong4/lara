@@ -47,10 +47,9 @@ const submit = () => {
                             <InputLabel for="name" value="名前" class=" text-3xl font-bold" />
                             <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
-                        <p class=" text-gray-500 text-xl">※お名前を漢字でご入力</p>
                     </div>
                     <div class="w-[60%] sm:w-[100%]">
-                        <TextInput id="name" v-model="form.name" type="text"   autocomplete="name" />
+                        <TextInput id="name" v-model="form.name" type="text"   autocomplete="name" placeholder="※お名前を漢字でご入力" />
                         <InputError class="mt-2" :message="form.errors.name" />
                     </div>
                 </div>
@@ -61,11 +60,10 @@ const submit = () => {
                             <InputLabel for="Furigana" value="フリガナ" class=" text-3xl font-bold sm:mr-[30px]" />
                             <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
-                        <p class=" text-gray-500 text-xl">※お名前のフリガナをご入力</p>
                     </div>
                     <div class="w-[60%] sm:w-[100%]">
                     <TextInput id="Furigana" v-model="form.Furigana" type="text"  
-                        autocomplete="Furigana" />
+                        autocomplete="Furigana" placeholder="※お名前のフリガナをご入力"/>
                     <InputError class="mt-2" :message="form.errors.Furigana" />
                 </div>
                 </div>
@@ -91,7 +89,7 @@ const submit = () => {
                     <div class=" w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8">
                             <InputLabel for="gender" value="性別" class=" text-3xl font-bold sm:mr-[30px]" />
-                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">性別</p>
+                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
                     </div>
                     <div class=" w-[60%] sm:w-[100%]">
@@ -109,12 +107,11 @@ const submit = () => {
                     <div class=" w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8">
                             <InputLabel for="email" value="メールアドレス" class=" text-3xl font-bold sm:mr-[30px]" />
-                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">性別</p>
+                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
-                        <p class=" text-gray-500 text-xl">※半角英数字でご入力</p>
                     </div>
                     <div class="w-[60%] sm:w-[100%]">
-                    <TextInput id="email" v-model="form.email" type="email"   autocomplete="email" />
+                    <TextInput id="email" v-model="form.email" type="email"   autocomplete="email" placeholder="※半角英数字でご入力" />
                     <InputError class="mt-2" :message="form.errors.email" />
                 </div>
                 </div>
@@ -123,13 +120,12 @@ const submit = () => {
                     <div class=" w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8">
                             <InputLabel for="emailConfirm" value="メールアドレス（確認用）" class=" text-3xl font-bold sm:mr-[30px]" />
-                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">性別</p>
+                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
-                        <p class=" text-gray-500 text-xl">※上記と同じメールアドレスを再度ご入力</p>
                     </div>
                     <div class="w-[60%] sm:w-[100%]">
                     <TextInput id="emailConfirm" v-model="form.emailConfirm" type="email"  
-                        autocomplete="emailConfirm" />
+                        autocomplete="emailConfirm" placeholder="※上記と同じメールアドレスを再度ご入力" />
                     <InputError class="mt-2" :message="form.errors.emailConfirm" />
                 </div>
                 </div>
@@ -138,13 +134,12 @@ const submit = () => {
                     <div class=" w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8">
                             <InputLabel for="password" value="パスワード" class=" text-3xl font-bold sm:mr-[30px]" />
-                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">性別</p>
+                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
-                        <p class=" text-gray-500 text-xl">※半角英数字で8文字以上でご入力</p>
                     </div>
                     <div class="w-[60%] sm:w-[100%]">
                     <TextInput id="password" name="password" v-model="form.password" type="password"  
-                        autocomplete="password" />
+                        autocomplete="password"  placeholder="※半角英数字で8文字以上でご入力"/>
                     <InputError class="mt-2" :message="form.errors.password" />
                 </div>
                 </div>
@@ -153,13 +148,12 @@ const submit = () => {
                     <div class=" w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8">
                             <InputLabel for="password_confirmation" value="パスワード（確認用）" class=" text-3xl font-bold sm:mr-[30px]" />
-                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">性別</p>
+                            <p class=" text-3xl font-medium text-red-500 min-w-[40px]">必須</p>
                         </div>
-                        <p class=" text-gray-500 text-xl">※上記と同じパスワードを再度ご入力</p>
                     </div>
                     <div class="w-[60%] sm:w-[100%]">
                     <TextInput id="password_confirmation" name="password_confirmation" v-model="form.password_confirmation" type="password" 
-                         autocomplete="password_confirmation" />
+                         autocomplete="password_confirmation" placeholder="※上記と同じパスワードを再度ご入力" />
                     <InputError class="mt-2" :message="form.errors.password_confirmation" />
                 </div>
                 </div>
@@ -176,7 +170,7 @@ const submit = () => {
                     </Link>
 
                     <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                        Register
+                        送信
                     </PrimaryButton>
                 </div>
             </form>

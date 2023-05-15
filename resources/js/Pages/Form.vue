@@ -62,13 +62,6 @@ const submit = () => {
     
 };
 
-
-const change = (e) => {
-    console.log(e.target.value);
-    let name =e.target.name;
-    form[name] = e.target.value;
-};
-
 const setValue = () => {
     form.district = document.getElementById('district')?.value;
     form.city = document.getElementById('city')?.value;
@@ -119,7 +112,7 @@ window.onload = function()
                         <p class=" text-gray-500 text-xl">※お名前を漢字でご入力</p>
                     </div>
                     <div class="w-[60%] sm:w-[100%]">
-                        <TextInput  id="name" v-model="form.name" type="text" autocomplete="name" />
+                        <TextInput  id="name" v-model="form.name" type="text" autocomplete="name" disabled/>
                         <InputError class="mt-2" :message="form.errors.name" />
                     </div>
                 </div>
@@ -133,7 +126,7 @@ window.onload = function()
                         <p class=" text-gray-500 text-xl">※お名前のフリガナをご入力</p>
                     </div>
                     <div class="w-[60%] sm:w-[100%]">
-                        <TextInput  id="Furigana" v-model="form.Furigana" type="text" autocomplete="Furigana" />
+                        <TextInput  id="Furigana" v-model="form.Furigana" type="text" autocomplete="Furigana"  disabled/>
                         <InputError class="mt-2" :message="form.errors.Furigana" />
                     </div>
                 </div>
@@ -147,9 +140,9 @@ window.onload = function()
                     </div>
                     <div class="w-[60%] sm:w-[100%] ">
                         <div class="flex flex-wrap gap-10 w-full sm:gap-[1.5rem]">
-                            <SelectInput  min="1900" max="2004" v-model="form.year" opDefault="年" id="year" />
-                            <SelectInput  min="1" max="12" v-model="form.month" opDefault="月" id="month" />
-                            <SelectInput  min="1" max="31" v-model="form.day" opDefault="日" id="day" />
+                            <SelectInput  min="1900" max="2004" v-model="form.year" opDefault="年" id="year"  disabled/>
+                            <SelectInput  min="1" max="12" v-model="form.month" opDefault="月" id="month"  disabled/>
+                            <SelectInput  min="1" max="31" v-model="form.day" opDefault="日" id="day"  disabled/>
                         </div>
                         <InputError class="mt-2" :message="form.errors.year || form.errors.month || form.errors.day" />
                     </div>
@@ -164,8 +157,8 @@ window.onload = function()
                     </div>
                     <div class=" w-3/5">
                         <div class="flex flex-wrap gap-x-20 w-full">
-                            <RadioInput  v-model="form.gender" name="gender" id="male" lable="男性" />
-                            <RadioInput  v-model="form.gender" name="gender" id="female" lable="女性" />
+                            <RadioInput  v-model="form.gender" name="gender" id="male" lable="男性"  disabled/>
+                            <RadioInput  v-model="form.gender" name="gender" id="female" lable="女性"  disabled/>
                         </div>
                         <InputError class="mt-2" :message="form.errors.gender" />
                     </div>
@@ -181,7 +174,7 @@ window.onload = function()
                         <p class=" text-gray-500 text-xl">※半角英数字でご入力</p>
                     </div>
                     <div class="w-[60%] sm:w-[100%]">
-                        <TextInput  id="email" v-model="form.email" type="email" autocomplete="email" />
+                        <TextInput  id="email" v-model="form.email" type="email" autocomplete="email"  disabled/>
                         <InputError class="mt-2" :message="form.errors.email" />
                     </div>
                 </div>
@@ -599,7 +592,7 @@ window.onload = function()
 
                 <div class="flex flex-col items-start justify-end mt-4 p-[2rem] gap-6">
                     <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                        「確認へ移動」ボタン
+                        確認へ移動
                     </PrimaryButton>
                 </div>
             </form>

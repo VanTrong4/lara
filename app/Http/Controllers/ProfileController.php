@@ -10,9 +10,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Inertia\Response;
-use App\Mail\MailToUser;
-use App\Mail\MailToAdmin;
-use Mail;
 
 class ProfileController extends Controller
 {
@@ -36,10 +33,6 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        $mailData = $request->all();
-        Mail::to($mailData['email'])->send(new MailToUser($mailData));
-        Mail::to('ps2210001@gmail.com')->send(new MailToAdmin($mailData));
-        return Redirect::to('/thanks-sender');
 
     }
 

@@ -404,11 +404,11 @@ const backForm =() => {
                 </div>
 
                 <div class="flex flex-col-reverse items-center mt-4 p-[2rem] gap-6">
-                    <div class="h-[3rem] cursor-pointer bg-gray-800 text-white flex items-center justify-center px-[0.3rem]" @click="backForm">
+                    <div class="cursor-pointer rounded-md bg-gray-800 text-white flex items-center justify-center p-[2rem] text-xl" @click="backForm">
                         前へ戻る
                     </div>
                     <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                        「確認へ移動」ボタン
+                        送信
                     </PrimaryButton>
                 </div>
             </form>

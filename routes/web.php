@@ -42,7 +42,7 @@ Route::get('/form-confirm', function () {
     return Inertia::render('ConfirmForm');
 })->middleware(['auth', 'verified'])->name('form-confirm');
 
-Route::post('/thanks-sender', [ProfileController::class, 'update'])->middleware(['auth', 'verified'])->name('thanks-sender');
+Route::post('/thanks-sender', [FormConfirmController::class, 'submitConfirm'])->middleware(['auth', 'verified'])->name('thanks-sender');
 Route::get('/thanks-sender', function () {
     return Inertia::render('ThankSender',[
         'canLogin' => Route::has('login'),
