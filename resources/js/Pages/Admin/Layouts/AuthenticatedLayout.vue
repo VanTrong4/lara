@@ -4,6 +4,7 @@ import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
+import Aside from '@/Pages/Admin/Layouts/Aside.vue';
 
 const showingNavigationDropdown = ref(false);
 </script>
@@ -11,7 +12,7 @@ const showingNavigationDropdown = ref(false);
 <template>
     <div>
         <div class="min-h-screen">
-            <nav class="flex items-center h-[6rem] bg-green-500 fixed w-full top-0 left-0 z-40">
+            <nav class="flex items-center h-[6rem] bg-green-500 fixed w-full top-0 left-0 z-50">
                 <!-- Primary Navigation Menu -->
                 <div class="container">
                     <div class="flex justify-between w-full">
@@ -35,7 +36,7 @@ const showingNavigationDropdown = ref(false);
                                                 type="button"
                                                 class="inline-flex h-[3rem] text-3xl items-center px-3 py-2 border border-transparent leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                             >
-                                                {{ $page.props.auth.user.name }}
+                                                trong
 
                                                 <svg
                                                     class="ml-2 -mr-0.5 h-4 w-4"
@@ -110,9 +111,9 @@ const showingNavigationDropdown = ref(false);
                     <div class="pt-4 pb-1 border-t border-gray-200 text-xl">
                         <div class="px-4">
                             <div class="font-medium text-xl text-gray-800">
-                                {{ $page.props.auth.user.name }}
+                                trong
                             </div>
-                            <div class="font-medium text-gray-500">{{ $page.props.auth.user.email }}</div>
+                            <div class="font-medium text-gray-500">trong@gmail</div>
                         </div>
 
                         <div class="mt-3 space-y-1 text-xl">
@@ -123,16 +124,9 @@ const showingNavigationDropdown = ref(false);
                     </div>
                 </div>
             </nav>
-
-            <!-- Page Heading -->
-            <header class="bg-white shadow mt-[7rem]" v-if="$slots.header">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    <slot name="header" />
-                </div>
-            </header>
-
+            <Aside/>
             <!-- Page Content -->
-            <main>
+            <main class="pl-[24rem] bg-gray-50">
                 <slot />
             </main>
             <footer class="bg-green-300 py-[4rem] mt-14">

@@ -15,6 +15,7 @@ class TblRegisterForm extends Migration
     {
         //
         Schema::create('tbl_registerForm', function (Blueprint $table) {
+            $table->id();
             $table->string('idUser')->nullable();
             $table->string('preferContact')->nullable();
             $table->string('LINEID')->nullable();
