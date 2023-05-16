@@ -5,6 +5,8 @@ use App\Http\Controllers\MailControl;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\FormConfirmController;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\RegisterFormController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -56,24 +58,47 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::prefix('admin')->group(function(){
-    Route::get('/login', function () {
-        return Inertia::render('Admin/Login');
-    })->name("admin.login");
+Route::get('admin/login', function () {
+    return Inertia::render('Admin/Login');
+})->name("admin.login");
+Route::post('admin/login', [AuthController::class,'checkLogin'])->name('admin.checkLogin');
 
-    Route::post('/login', [AuthController::class,'checkLogin'])->name('admin.checkLogin');
+Route::prefix('admin')->middleware('admin.checkLogin')->group(function(){
+
+    Route::get('/logout', [AuthController::class,'logout'])->name("admin.logout");
 
     Route::get('/dashboard', function () {
         return Inertia::render('Admin/Dashboard');
     })->name("admin.dashboard");
 
-    Route::get('/users', function () {
-        return Inertia::render('Admin/Users');
-    })->name("admin.users");
-    
-    Route::get('/formRegister', function () {
-        return Inertia::render('Admin/RegisterForm');
-    })->name("admin.formRegister");
+    Route::prefix('users')->group(function(){
+        Route::get('', [UserController::class,'index'])->name("admin.users");
+        
+        Route::get('/detail/{id}', [UserController::class,'detail'])->name("admin.users-detail");
+        
+        Route::get('/create', [UserController::class,'create'])->name("admin.users-create");
+        
+        Route::get('/edit/{id}', [UserController::class,'edit'])->name("admin.users-edit");
+        
+        Route::post('/update/{id}', [UserController::class,'update'])->name("admin.users-update");
+        
+        Route::post('/delete/{id}', [UserController::class,'delete'])->name("admin.users-delete");
+    });
+
+    Route::prefix('formRegister')->group(function(){
+        Route::get('', [RegisterFormController::class,'index'])->name("admin.formRegister");
+        
+        Route::get('/detail/{id}', [RegisterFormController::class,'detail'])->name("admin.formRegister-detail");
+        
+        Route::get('/create', [RegisterFormController::class,'create'])->name("admin.formRegister-create");
+        
+        Route::get('/edit/{id}', [RegisterFormController::class,'edit'])->name("admin.formRegister-edit");
+        
+        Route::post('/update/{id}', [RegisterFormController::class,'update'])->name("admin.formRegister-update");
+        
+        Route::post('/delete/{id}', [RegisterFormController::class,'delete'])->name("admin.formRegister-delete");
+    });
+
 });
 
 

@@ -15,12 +15,13 @@ table {
 th,td {
     padding: 1.2rem;
     text-align: left;
+    white-space: nowrap;
     vertical-align: middle;
 }
 tbody tr:nth-child(odd) {
     background-color: #f3f4f680;
 }
-td:not(:first-child) {
+td:not(:first-child),th:not(:first-child) {
     border-left-width: 1px;
     border-top-width: 0px;
     border-right-width: 0px;
@@ -28,3 +29,11 @@ td:not(:first-child) {
     --tw-border-opacity: 1;
     border-color: #ccc;
 }
+.new{
+    background-color: #e6e6e6;
+}
+.completed{ background-color:#d4edbc; }
+
+.reviewing{ background-color:#ffe5a0; }
+
+.refuse{ background-color:#b10202; }

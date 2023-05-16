@@ -17,6 +17,7 @@ class TblRegisterForm extends Migration
         Schema::create('tbl_registerForm', function (Blueprint $table) {
             $table->id();
             $table->string('idUser')->nullable();
+            $table->string('status')->nullable()->default('new');
             $table->string('preferContact')->nullable();
             $table->string('LINEID')->nullable();
             $table->string('postCodeBef')->nullable();
@@ -41,6 +42,7 @@ class TblRegisterForm extends Migration
             $table->string('avatarUser')->nullable();
             $table->string('frontCardUser')->nullable();
             $table->string('afterCardUser')->nullable();
+            $table->timestamps();
         });
     }
 
