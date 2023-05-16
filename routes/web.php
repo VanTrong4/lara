@@ -72,7 +72,7 @@ Route::prefix('admin')->middleware('admin.checkLogin')->group(function(){
     })->name("admin.dashboard");
 
     Route::prefix('users')->group(function(){
-        Route::get('', [UserController::class,'index'])->name("admin.users");
+        Route::get('/', [UserController::class,'index'])->name("admin.users");
         
         Route::get('/detail/{id}', [UserController::class,'detail'])->name("admin.users-detail");
         
@@ -82,7 +82,7 @@ Route::prefix('admin')->middleware('admin.checkLogin')->group(function(){
         
         Route::post('/update/{id}', [UserController::class,'update'])->name("admin.users-update");
         
-        Route::post('/delete/{id}', [UserController::class,'delete'])->name("admin.users-delete");
+        Route::get('/excel', [UserController::class,'excel'])->name("admin.users-excel");
     });
 
     Route::prefix('formRegister')->group(function(){
@@ -90,13 +90,12 @@ Route::prefix('admin')->middleware('admin.checkLogin')->group(function(){
         
         Route::get('/detail/{id}', [RegisterFormController::class,'detail'])->name("admin.formRegister-detail");
         
-        Route::get('/create', [RegisterFormController::class,'create'])->name("admin.formRegister-create");
+        Route::post('/updateStatus/{id}', [RegisterFormController::class,'updateStatus'])->name("admin.formRegister-updateStatus");
         
-        Route::get('/edit/{id}', [RegisterFormController::class,'edit'])->name("admin.formRegister-edit");
-        
-        Route::post('/update/{id}', [RegisterFormController::class,'update'])->name("admin.formRegister-update");
-        
-        Route::post('/delete/{id}', [RegisterFormController::class,'delete'])->name("admin.formRegister-delete");
+        Route::get('/image/{id}', [RegisterFormController::class,'image'])->name("admin.formRegister-image");
+
+        Route::post('/pdf/{id}', [RegisterFormController::class,'pdf'])->name("admin.formRegister-pdf");
+
     });
 
 });

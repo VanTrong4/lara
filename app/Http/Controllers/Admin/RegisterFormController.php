@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use App\Models\RegisterForm;
+use App\Exports\UserDataExport;
 use Inertia\Inertia;
 
 class RegisterFormController extends Controller
@@ -15,41 +17,30 @@ class RegisterFormController extends Controller
         $datas = RegisterForm::with('user')->paginate(2);
         return Inertia::render('Admin/RegisterForm/Index',['datas' => $datas]);
     }
-
-    public function create()
-    {
-        return Inertia::render('Admin/Users/UsersCreate');
-    }
     
     public function detail($id)
     {
-        $user = User::find($id);
-        return Inertia::render('Admin/Users/UsersDetail',['user' => $user]);
+        $datas = RegisterForm::with('user')->find($id);
+        return Inertia::render('Admin/RegisterForm/RegisterFormDetail',['datas' => $datas]);
+    }
+    
+    public function image($id)
+    {
+        $datas = RegisterForm::select('avatarUser','frontCardUser','afterCardUser')->where('id','=',$id)->get();
+        return Inertia::render('Admin/RegisterForm/RegisterFormImage',['datas' => $datas]);
     }
 
-    public function edit($id)
+    public function updateStatus(Request $request,$id)
     {
-        $user = User::find($id);
-        return Inertia::render('Admin/Users/UsersEdit',['user' => $user]);
-    }
-    
-    public function update(ProfileUpdateRequest $request, $id)
-    {
-        $user = User::find($id);
+        $user = RegisterForm::find($id);
         $user->update([
-            'name'=> $request->name,
-            'Furigana'=> $request->Furigana,
-            'year'=> $request->year,
-            'month'=> $request->month,
-            'day'=> $request->day,
-            'gender'=> $request->gender,
-            'email'=> $request->email,
-            'is_admin'=> $request->is_admin,
+            'status'=> $request->status,
         ]);
-        return redirect()->route('admin.users-edit',$id);
+        return redirect()->back();
     }
-    
-    public function delete(Request $request)
+
+    public function excel(Request $request)
     {
+        return Excel::download(UserDataExport::class);
     }
 }

@@ -7,7 +7,6 @@ import TextInput from '@/Components/TextInput.vue';
 import SelectInput from '@/Components/SelectInput.vue';
 import RadioInput from '@/Components/RadioInput.vue';
 import { Head, useForm  } from '@inertiajs/vue3';
-import NProgress from 'nprogress';
 
 const props = defineProps({
     user : Object,
@@ -24,11 +23,7 @@ const form = useForm({
 });
 
 const submit = () => {
-    NProgress.start();
-    form.post(route('admin.users-update',props.user.id), {
-        onFinish: () => {
-            NProgress.done();},
-    });
+    form.post(route('admin.users-update',props.user.id));
 };
 
 </script>

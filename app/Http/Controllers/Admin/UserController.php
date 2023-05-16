@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 use Inertia\Inertia;
 use App\Models\User;
+use App\Exports\UserExport;
 use App\Http\Requests\ProfileUpdateRequest;
 
 class UserController extends Controller
@@ -49,7 +51,8 @@ class UserController extends Controller
         return redirect()->route('admin.users-edit',$id);
     }
     
-    public function delete(Request $request)
+    public function excel()
     {
+        return Excel::download(new UserExport, 'users-data.csv');
     }
 };

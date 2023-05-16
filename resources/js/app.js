@@ -14,6 +14,6 @@ createInertiaApp({
             .mixin({ methods: { route } })
             .mount(el);
     },
-    progress: false,
+    progress: true,
 });
 

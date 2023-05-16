@@ -8,7 +8,6 @@ import SelectInput from '@/Components/SelectInput.vue';
 import RadioInput from '@/Components/RadioInput.vue';
 import Checkbox from '@/Components/Checkbox.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
-import NProgress from 'nprogress';
 
 const form = useForm({
     name: '',
@@ -25,10 +24,8 @@ const form = useForm({
 });
 
 const submit = () => {
-    NProgress.start();
     form.post(route('register'), {
         onFinish: () => {
-            NProgress.done();
             form.reset('password', 'password_confirmation')},
     });
 };

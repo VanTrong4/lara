@@ -1,118 +1,51 @@
 <script setup>
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import InputConfirm from '@/Components/InputConfirm.vue';
-import { Head,useForm} from '@inertiajs/vue3';
+import AuthenticatedLayout from '@/Pages/Admin/Layouts/AuthenticatedLayout.vue';
+import { Head} from '@inertiajs/vue3';
 
 const props = defineProps({
-    dataForm : Object,
+    datas : Object,
 })
-
-let inputData ;
-let avatarUser;
-let frontCardUser;
-let afterCardUser;
-    avatarUser = JSON.parse(sessionStorage.getItem("avatar"))
-    frontCardUser = JSON.parse(sessionStorage.getItem("frontCard"))
-    afterCardUser = JSON.parse(sessionStorage.getItem("afterCard"))
-
-
-if(sessionStorage.getItem("inputUser")){
-    inputData = JSON.parse(sessionStorage.getItem("inputUser"))
-}
-
-
-const form = useForm({
-    name: props.dataForm?.name||inputData?.name,
-    Furigana: props.dataForm?.Furigana||inputData?.Furigana,
-    year: props.dataForm?.year||inputData?.year,
-    month: props.dataForm?.month||inputData?.month,
-    day: props.dataForm?.day||inputData?.day,
-    gender: props.dataForm?.gender||inputData?.gender,
-    email: props.dataForm?.email||inputData?.email,
-    preferContact: props.dataForm?.preferContact||inputData?.preferContact,
-    LINEID: props.dataForm?.LINEID||inputData?.LINEID,
-    postCodeBef: props.dataForm?.postCodeBef||inputData?.postCodeBef,
-    postCodeAfter: props.dataForm?.postCodeAfter||inputData?.postCodeAfter,
-    district: props.dataForm?.district||inputData?.district,
-    city: props.dataForm?.city||inputData?.city,
-    address: props.dataForm?.address||inputData?.address,
-    apartmentName: props.dataForm?.apartmentName||inputData?.apartmentName,
-    postCodeComBef: props.dataForm?.postCodeComBef||inputData?.postCodeComBef,
-    postCodeComAfter: props.dataForm?.postCodeComAfter||inputData?.postCodeComAfter,
-    districtCom: props.dataForm?.districtCom||inputData?.districtCom,
-    cityCom: props.dataForm?.cityCom||inputData?.cityCom,
-    addressCom: props.dataForm?.addressCom||inputData?.addressCom,
-    apartmentNameCom: props.dataForm?.apartmentNameCom||inputData?.apartmentNameCom,
-    telephoneCom: props.dataForm?.telephoneCom||inputData?.telephoneCom,
-    bankName: props.dataForm?.bankName||inputData?.bankName,
-    branchName: props.dataForm?.branchName||inputData?.branchName,
-    teleBranch: props.dataForm?.teleBranch||inputData?.teleBranch,
-    typeAccount: props.dataForm?.typeAccount||inputData?.typeAccount,
-    account: props.dataForm?.account||inputData?.account,
-    accountName: props.dataForm?.accountName||inputData?.accountName,
-    avatarUser: props.dataForm?.avatarUser||inputData?.avatarUser,
-    frontCardUser: props.dataForm?.frontCardUser||inputData?.frontCardUser,
-    afterCardUser: props.dataForm?.afterCardUser||inputData?.afterCardUser,
-});
-
-const submit = () => {
-    form.post(route('thanks-sender'), {
-        onFinish: () => {
-            sessionStorage.removeItem("inputUser");
-            sessionStorage.removeItem("avatar");
-            sessionStorage.removeItem("frontCard");
-            sessionStorage.removeItem("afterCard");
-        },
-    });
-};
-
-const backForm =() => {
-    history.back();
-}
-
 </script>
 
 <template>
-    <Head title="Form" />
+    <Head title="datas" />
+
     <AuthenticatedLayout>
         <div class="container mt-[10rem] px-[1.5rem]">
             <h1 class="text-5xl font-bold text-gray-900">本登録用のフォーム（お申し込み用）</h1>
-            <form @submit.prevent="submit"
-                class="w-full px-[4rem] py-[4rem] border border-slate-500 rounded-sm sm:px-[1rem]">
-                <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
+            <div class="w-full px-[4rem] py-[4rem] border border-slate-500 rounded-sm sm:px-[1rem]">
+                <div class="flex flex-wrap justify-between p-[2rem] gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="name" value="名前" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">名前</span>
                         </div>
                     </div>
                     <div class="w-[55%] sm:w-[100%]">
-                        <InputConfirm  :value="form.name"/>
+                        <span class="mt-1 block h-[6.4rem] text-3xl border-none w-full">{{datas.user.name}}</span>
                     </div>
                 </div>
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="Furigana" value="フリガナ" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">フリガナ</span>
                         </div>
                     </div>
                     <div class="w-[55%] sm:w-[100%]">
-                        <InputConfirm :value="form.Furigana" />
+                        <span class="mt-1 block h-[6.4rem] text-3xl border-none w-full">{{datas.user.Furigana}}</span>
                     </div>
                 </div>
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="" value="生年月日" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">生年月日</span>
                         </div>
                     </div>
                     <div class="w-[55%] sm:w-full ">
-                        <div class="flex gap-10 w-full">
-                            <InputConfirm :value="form.year" />
-                            <InputConfirm :value="form.month" />
-                            <InputConfirm :value="form.day" />
+                        <div class="flex w-full">
+                            <span class="mt-1 block h-[6.4rem] text-3xl border-none">{{datas.user.year}}年</span>
+                            <span class="mt-1 block h-[6.4rem] text-3xl border-none">{{datas.user.month}}月</span>
+                            <span class="mt-1 block h-[6.4rem] text-3xl border-none">{{datas.user.day}}日</span>
                         </div>
                     </div>
                 </div>
@@ -120,12 +53,12 @@ const backForm =() => {
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="gender" value="性別" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">性別</span>
                         </div>
                     </div>
                     <div class=" w-[55%] sm:w-full">
                         <div class="flex gap-20 w-full">
-                            <InputConfirm :value="form.gender" />
+                            <span class="mt-1 block h-[6.4rem] text-3xl border-none w-full">{{datas.user.gender}}</span>
                         </div>
                     </div>
                 </div>
@@ -134,24 +67,23 @@ const backForm =() => {
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="email" value="メールアドレス" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">メールアドレス</span>
                         </div>
-                        <p class=" text-gray-500 text-xl">※半角英数字でご入力</p>
                     </div>
                     <div class="w-[55%] sm:w-[100%]">
-                        <InputConfirm :value="form.email" />
+                        <span class="mt-1 block h-[6.4rem] text-3xl border-none w-full">{{datas.user.email}}</span>
                     </div>
                 </div>
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="preferContact" value="ご希望の連絡方法" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">ご希望の連絡方法</span>
                         </div>
                     </div>
                     <div class=" w-[55%] sm:w-full">
                         <div class="flex gap-20 w-full">
-                            <InputConfirm :value="form.preferContact" />
+                            <span class="mt-1 block h-[6.4rem] text-3xl border-none w-full">{{datas.preferContact}}</span>
                         </div>
                     </div>
                 </div>
@@ -159,11 +91,11 @@ const backForm =() => {
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="LINEID" value="LINE ID" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">LINE</span>
                         </div>
                     </div>
                     <div class="w-[55%] sm:w-[100%]">
-                        <InputConfirm :value="form.LINEID" />
+                        <span class="mt-1 block h-[6.4rem] text-3xl border-none w-full">{{datas.LINEID}}</span>
                     </div>
                 </div>
 
@@ -172,14 +104,13 @@ const backForm =() => {
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="postCodeBef" value="郵便番号" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">郵便番号</span>
                         </div>
                     </div>
                     <div class="w-[55%]">
-                        <div class="flex w-full items-center gap-6">
-                            <InputConfirm :value="form.postCodeBef" />
-                            -
-                            <InputConfirm :value="form.postCodeAfter" />
+                        <div class="flex items-center">
+                            <span class="mt-1 block h-[6.4rem] text-3xl border-none">{{datas.postCodeBef}}-</span>
+                            <span class="mt-1 block h-[6.4rem] text-3xl border-none">{{datas.postCodeAfter}}</span>
                         </div>
                     </div>
                 </div>
@@ -187,44 +118,44 @@ const backForm =() => {
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="district" value="都道府県" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">都道府県</span>
                         </div>
                     </div>
                     <div class="w-[55%] sm:w-[100%]">
-                        <InputConfirm :value="form.district" />
+                        <span class="mt-1 block h-[6.4rem] text-3xl border-none w-full">{{datas.district}}</span>
                     </div>
                 </div>
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="city" value="市区町村" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">市区町村</span>
                         </div>
                     </div>
                     <div class="w-[55%] sm:w-[100%]">
-                        <InputConfirm :value="form.city" />
+                        <span class="mt-1 block h-[6.4rem] text-3xl border-none w-full">{{datas.city}}</span>
                     </div>
                 </div>
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="address" value="番地" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">番地</span>
                         </div>
                     </div>
                     <div class="w-[55%] sm:w-[100%]">
-                        <InputConfirm :value="form.address" />
+                        <span class="mt-1 block h-[6.4rem] text-3xl border-none w-full">{{datas.address}}</span>
                     </div>
                 </div>
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="apartmentName" value="マンション名・部屋番号" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">マンション名・部屋番号</span>
                         </div>
                     </div>
                     <div class="w-[55%] sm:w-[100%]">
-                        <InputConfirm :value="form.apartmentName" />
+                        <span class="mt-1 block h-[6.4rem] text-3xl border-none w-full">{{datas.apartmentName}}</span>
                     </div>
                 </div>
 
@@ -233,14 +164,13 @@ const backForm =() => {
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="postCodeComBef" value="郵便番号" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">郵便番号</span>
                         </div>
                     </div>
                     <div class="w-[55%]">
-                        <div class="flex w-full items-center gap-6">
-                            <InputConfirm :value="form.postCodeComBef" />
-                            -
-                            <InputConfirm :value="form.postCodeComAfter" />
+                        <div class="flex items-center">
+                            <span class="mt-1 block h-[6.4rem] text-3xl border-none">{{datas.postCodeComBef}}-</span>
+                            <span class="mt-1 block h-[6.4rem] text-3xl border-none">{{datas.postCodeComAfter}}</span>
                         </div>
                     </div>
                 </div>
@@ -248,55 +178,55 @@ const backForm =() => {
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="districtCom" value="都道府県" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">都道府県</span>
                         </div>
                     </div>
                     <div class="w-[55%] sm:w-[100%]">
-                        <InputConfirm :value="form.districtCom" />
+                        <span class="mt-1 block h-[6.4rem] text-3xl border-none w-full">{{datas.districtCom}}</span>
                     </div>
                 </div>
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="cityCom" value="市区町村" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">市区町村</span>
                         </div>
                     </div>
                     <div class="w-[55%] sm:w-[100%]">
-                        <InputConfirm :value="form.cityCom" />
+                        <span class="mt-1 block h-[6.4rem] text-3xl border-none w-full">{{datas.cityCom}}</span>
                     </div>
                 </div>
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="addressCom" value="番地" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">番地</span>
                         </div>
                     </div>
                     <div class="w-[55%] sm:w-[100%]">
-                        <InputConfirm :value="form.addressCom" />
+                        <span class="mt-1 block h-[6.4rem] text-3xl border-none w-full">{{datas.addressCom}}</span>
                     </div>
                 </div>
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="apartmentNameCom" value="マンション名・部屋番号" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">マンション名・部屋番号</span>
                         </div>
                     </div>
                     <div class="w-[55%] sm:w-[100%]">
-                        <InputConfirm :value="form.apartmentNameCom" />
+                        <span class="mt-1 block h-[6.4rem] text-3xl border-none w-full">{{datas.apartmentNameCom}}</span>
                     </div>
                 </div>
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="telephoneCom" value="電話番号" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">電話番号</span>
                         </div>
                     </div>
                     <div class="w-[55%] sm:w-[100%]">
-                        <InputConfirm :value="form.telephoneCom" />
+                        <span class="mt-1 block h-[6.4rem] text-3xl border-none w-full">{{datas.telephoneCom}}</span>
                     </div>
                 </div>
 
@@ -305,45 +235,45 @@ const backForm =() => {
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="bankName" value="銀行名" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">銀行名</span>
                         </div>
                     </div>
                     <div class="w-[55%] sm:w-[100%]">
-                        <InputConfirm :value="form.bankName" />
+                        <span class="mt-1 block h-[6.4rem] text-3xl border-none w-full">{{datas.bankName}}</span>
                     </div>
                 </div>
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="branchName" value="支店名" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">支店名</span>
                         </div>
                     </div>
                     <div class="w-[55%] sm:w-[100%]">
-                        <InputConfirm :value="form.branchName" />
+                        <span class="mt-1 block h-[6.4rem] text-3xl border-none w-full">{{datas.branchName}}</span>
                     </div>
                 </div>
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="teleBranch" value="支店番号" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">支店番号</span>
                         </div>
                     </div>
                     <div class="w-[55%] sm:w-[100%]">
-                        <InputConfirm :value="form.teleBranch" />
+                        <span class="mt-1 block h-[6.4rem] text-3xl border-none w-full">{{datas.teleBranch}}</span>
                     </div>
                 </div>
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-b border-t-slate-400 border-b-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="typeAccount" value="口座の種類" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">口座の種類</span>
                         </div>
                     </div>
                     <div class=" w-[55%] sm:w-full">
                         <div class="flex gap-20 w-full">
-                            <InputConfirm :value="form.typeAccount" />
+                            <span class="mt-1 block h-[6.4rem] text-3xl border-none w-full">{{datas.typeAccount}}</span>
                         </div>
                     </div>
                 </div>
@@ -351,22 +281,22 @@ const backForm =() => {
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="account" value="口座番号" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">口座番号</span>
                         </div>
                     </div>
                     <div class="w-[55%] sm:w-[100%]">
-                        <InputConfirm :value="form.account" />
+                        <span class="mt-1 block h-[6.4rem] text-3xl border-none w-full">{{datas.account}}</span>
                     </div>
                 </div>
 
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="accountName" value="口座名義(カナ)" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">口座名義</span>
                         </div>
                     </div>
                     <div class="w-[55%] sm:w-[100%]">
-                        <InputConfirm :value="form.accountName" />
+                        <span class="mt-1 block h-[6.4rem] text-3xl border-none w-full">{{datas.accountName}}</span>
                     </div>
                 </div>
 
@@ -375,40 +305,30 @@ const backForm =() => {
                 <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-x-[10%]">
                     <div class="w-[35%] sm:w-[100%]">
                         <div class="flex justify-between mb-8 sm:mb-0">
-                            <InputLabel for="accountName" value="必要書類の添付" class=" text-3xl font-bold" />
+                            <span class="text-3xl font-bold">必要書類の添付</span>
                         </div>
                     </div>
                     <div class="w-[55%] sm:w-[100%]">
                         <div class="flex flex-wrap gap-y-[1.5rem] mb-[2rem] sm:w-full">
                             <div class="w-1/2 text-3xl sm:w-full">セルフィー（自画撮り）</div>
-                            <img class="w-[100px] h-auto" :src="avatarUser">
-                            <input class="hidden" :value="form.avatarUser" >
+                            <img class="w-[100px] h-auto" :src="`/storage/image/${datas.avatarUser}`">
                         </div>
                         <div class="flex flex-wrap gap-y-[1.5rem]">
                             <div class="w-1/2 text-3xl sm:w-full">運転免許証、または<br>顔写真付きの身分証明書</div>
                             <div class="w-1/2 text-xl sm:w-full">
                                 <div class="mb-[1.5rem]">
-                                    <img class="w-[100px] h-auto" :src="frontCardUser">
-                                    <input class="hidden" :value="form.frontCardUser" >
+                                    <span class=" font-medium text-red-500">※表面</span>
+                                    <img class="w-[100px] h-auto" :src="`/storage/image/${datas.frontCardUser}`">
                                 </div>
                                 <div>
-                                    <img class="w-[100px] h-auto" :src="afterCardUser">
-                                    <input class="hidden" :value="form.afterCardUser" >
+                                    <span class=" font-medium text-red-500">※裏面</span>
+                                    <img class="w-[100px] h-auto" :src="`/storage/image/${datas.afterCardUser}`">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="flex flex-col-reverse items-center mt-4 p-[2rem] gap-6">
-                    <div class="cursor-pointer rounded-md bg-gray-800 text-white flex items-center justify-center p-[2rem] text-xl" @click="backForm">
-                        前へ戻る
-                    </div>
-                    <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                        送信
-                    </PrimaryButton>
-                </div>
-            </form>
+            </div>
         </div>
     </AuthenticatedLayout>
 </template>

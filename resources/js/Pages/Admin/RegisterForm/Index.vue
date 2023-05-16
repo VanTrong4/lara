@@ -1,17 +1,29 @@
 <script setup>
 import AuthenticatedLayout from '@/Pages/Admin/Layouts/AuthenticatedLayout.vue';
-import { Head,Link } from '@inertiajs/vue3';
+import { Head,Link, useForm } from '@inertiajs/vue3';
 import { ref } from 'vue';
 
 
 const props = defineProps({
     datas : Object,
 })
-console.log(props.datas.data[1].user);
-const valueSet = ref('');
-const changeStatus = function(e){
-    valueSet.value = e.target.value;
+
+const valueSet = ref(['']);
+
+const form = useForm({
+    status: '',
+});
+
+const changeStatus = function(e,id){
+    valueSet.value[0] = e.target.value;
+    form.status = e.target.value;
+    valueSet.value[1] = id;
+    submit(id);
 }
+
+const submit = (id) => {
+    form.post(route('admin.formRegister-updateStatus',id));
+};
 </script>
 
 <template>
@@ -68,25 +80,25 @@ const changeStatus = function(e){
                             <tbody>
                                 <tr v-for="data in props.datas.data">
                                     <td>
-                                        <select v-model="data.status" @change="changeStatus($event)" 
-                                        :class="{
-                                            [data.status]: valueSet=='',
-                                            'rounded-md text-xl completed' : valueSet=='completed',
-                                            'rounded-md text-xl new' : valueSet=='new',
-                                            'rounded-md text-xl reviewing' : valueSet=='reviewing',
-                                            'rounded-md text-xl refuse' : valueSet=='refuse',
-                                        }" 
-                                        class="rounded-md text-xl "
-                                        name="status" id="status">
-                                            <option class="new" name="new" value="new">新規</option>
-                                            <option class="completed" name="completed" value="completed">契約完了</option>
-                                            <option class="reviewing" name="reviewing" value="reviewing">審査中</option>
-                                            <option class="refuse" name="refuse" value="refuse">当社断り</option>
-                                        </select>
+                                        <form @submit.prevent="submit" method="post">
+                                            <select :value="data.status" @change="changeStatus($event,data.id)" 
+                                                :class="'rounded-md text-xl '+data.status ,{
+                                                    'rounded-md text-xl completed' : valueSet[0]=='completed' && valueSet[1]==data.id,
+                                                    'rounded-md text-xl new' : valueSet[0]=='new' && valueSet[1]==data.id,
+                                                    'rounded-md text-xl reviewing' : valueSet[0]=='reviewing' && valueSet[1]==data.id,
+                                                    'rounded-md text-xl refuse' : valueSet[0]=='refuse' && valueSet[1]==data.id,
+                                                }" 
+                                                name="status" id="status">
+                                                <option class="new" name="new" value="new">新規</option>
+                                                <option class="completed" name="completed" value="completed">契約完了</option>
+                                                <option class="reviewing" name="reviewing" value="reviewing">審査中</option>
+                                                <option class="refuse" name="refuse" value="refuse">当社断り</option>
+                                            </select>
+                                        </form>
                                     </td>
-                                    <td><Link class="inline-flex justify-center items-center whitespace-nowrap focus:outline-none transition-colors focus:ring duration-150 border cursor-pointer rounded border-blue-600 dark:border-blue-500 ring-blue-300 dark:ring-blue-700 bg-blue-600 dark:bg-blue-500 text-white hover:bg-blue-700 hover:border-blue-700 hover:dark:bg-blue-600 hover:dark:border-blue-600 p-1 last:mr-0 w-full">PDF化</Link></td>
-                                    <td><Link class="inline-flex justify-center items-center whitespace-nowrap focus:outline-none transition-colors focus:ring duration-150 border cursor-pointer rounded border-blue-600 dark:border-blue-500 ring-blue-300 dark:ring-blue-700 bg-blue-600 dark:bg-blue-500 text-white hover:bg-blue-700 hover:border-blue-700 hover:dark:bg-blue-600 hover:dark:border-blue-600 p-1 last:mr-0 w-full">写真</Link></td>
-                                    <td><Link class="inline-flex justify-center items-center whitespace-nowrap focus:outline-none transition-colors focus:ring duration-150 border cursor-pointer rounded border-blue-600 dark:border-blue-500 ring-blue-300 dark:ring-blue-700 bg-blue-600 dark:bg-blue-500 text-white hover:bg-blue-700 hover:border-blue-700 hover:dark:bg-blue-600 hover:dark:border-blue-600 p-1 last:mr-0 w-full">詳細</Link></td>
+                                    <td><Link :href="route('admin.formRegister-pdf',data.id)" class="inline-flex justify-center items-center whitespace-nowrap focus:outline-none transition-colors focus:ring duration-150 border cursor-pointer rounded border-blue-600 dark:border-blue-500 ring-blue-300 dark:ring-blue-700 bg-blue-600 dark:bg-blue-500 text-white hover:bg-blue-700 hover:border-blue-700 hover:dark:bg-blue-600 hover:dark:border-blue-600 p-1 last:mr-0 w-full">PDF化</Link></td>
+                                    <td><Link :href="route('admin.formRegister-image',data.id)" class="inline-flex justify-center items-center whitespace-nowrap focus:outline-none transition-colors focus:ring duration-150 border cursor-pointer rounded border-blue-600 dark:border-blue-500 ring-blue-300 dark:ring-blue-700 bg-blue-600 dark:bg-blue-500 text-white hover:bg-blue-700 hover:border-blue-700 hover:dark:bg-blue-600 hover:dark:border-blue-600 p-1 last:mr-0 w-full">写真</Link></td>
+                                    <td><Link :href="route('admin.formRegister-detail',data.id)" class="inline-flex justify-center items-center whitespace-nowrap focus:outline-none transition-colors focus:ring duration-150 border cursor-pointer rounded border-blue-600 dark:border-blue-500 ring-blue-300 dark:ring-blue-700 bg-blue-600 dark:bg-blue-500 text-white hover:bg-blue-700 hover:border-blue-700 hover:dark:bg-blue-600 hover:dark:border-blue-600 p-1 last:mr-0 w-full">詳細</Link></td>
                                     <td>{{ data.user.created_at.slice(0,10).replace('-','年').replace('-','月') }}日</td>
                                     <td>{{ data.user.name }}</td>
                                     <td>{{ data.user.Furigana }}</td>
