@@ -14,7 +14,7 @@ const props = defineProps({
 
     <AuthenticatedLayout>
         <div class="py-12 min-h-screen">
-            <div class="mx-auto px-[6.4rem] w-full">
+            <div class="mx-auto px-[2.4rem] w-full">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg py-[4rem]">
                     <div class="p-6 text-2xl text-gray-900">Users</div>
                 </div>

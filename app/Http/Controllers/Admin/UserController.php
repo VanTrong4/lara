@@ -20,7 +20,7 @@ class UserController extends Controller
 
     public function create()
     {
-        return Inertia::render('Admin/Users/UsersCreate');
+        return redirect()->back();
     }
     
     public function detail($id)

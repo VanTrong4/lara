@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use App\Models\RegisterForm;
-use App\Exports\UserDataExport;
+use App\Exports\RegisterFormExport;
 use Inertia\Inertia;
 
 class RegisterFormController extends Controller
@@ -14,7 +14,7 @@ class RegisterFormController extends Controller
     
     public function index()
     {
-        $datas = RegisterForm::with('user')->paginate(2);
+        $datas = RegisterForm::with('user')->paginate(10);
         return Inertia::render('Admin/RegisterForm/Index',['datas' => $datas]);
     }
     
@@ -39,8 +39,20 @@ class RegisterFormController extends Controller
         return redirect()->back();
     }
 
-    public function excel(Request $request)
+    public function excel()
     {
-        return Excel::download(UserDataExport::class);
+        return Excel::download(new RegisterFormExport , 'form-data.csv');
+    }
+
+    public function pdf($id)
+    {
+        $datas = RegisterForm::with('user')->find($id);
+        $mpdf = new \Mpdf\Mpdf();
+        $mpdf->autoScriptToLang = true;
+        $mpdf->autoLangToFont = true;
+        $mpdf->simpleTables = false;
+        
+        $mpdf->WriteHTML(view('file.RegisterFormPdf',['datas'=>$datas]));
+        $mpdf->Output('contract.pdf','D');
     }
 }

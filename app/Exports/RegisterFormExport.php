@@ -5,15 +5,19 @@ namespace App\Exports;
 use App\Models\RegisterForm;
 use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
-use Maatwebsite\Excel\Concerns\Exportable;
-use Inertia\Inertia;
+use Illuminate\Contracts\View\View;
 
 class RegisterFormExport implements FromView,ShouldAutoSize
 {
-    use Exportable;
+    
+    private $datas;
 
-    public function view()
+    public function __construct(){
+        $this->datas = RegisterForm::with('user')->get();
+    }
+
+    public function view(): View
     {
-        
+        return view('file.RegisterFormExcel',['datas'=>$this->datas]);
     }
 }

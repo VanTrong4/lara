@@ -65,6 +65,11 @@ Route::post('admin/login', [AuthController::class,'checkLogin'])->name('admin.ch
 
 Route::prefix('admin')->middleware('admin.checkLogin')->group(function(){
 
+    
+    Route::get('/', function () {
+        return Inertia::render('Admin/Dashboard');
+    });
+
     Route::get('/logout', [AuthController::class,'logout'])->name("admin.logout");
 
     Route::get('/dashboard', function () {
@@ -94,7 +99,9 @@ Route::prefix('admin')->middleware('admin.checkLogin')->group(function(){
         
         Route::get('/image/{id}', [RegisterFormController::class,'image'])->name("admin.formRegister-image");
 
-        Route::post('/pdf/{id}', [RegisterFormController::class,'pdf'])->name("admin.formRegister-pdf");
+        Route::get('/excel', [RegisterFormController::class,'excel'])->name("admin.formRegister-excel");
+
+        Route::get('/pdf/{id}', [RegisterFormController::class,'pdf'])->name("admin.formRegister-pdf");
 
     });
 

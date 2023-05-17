@@ -1,17 +1,20 @@
 <script setup>
 import { Link } from '@inertiajs/vue3';
+const props = defineProps({
+    props: Boolean
+}); 
 
 let current = route().current();
 </script>
 
 <template>
-    <aside id="aside" class="w-[24rem] fixed flex z-50 top-0 h-screen transition-position">
+    <aside id="aside" class="w-[24rem] fixed flex z-50 top-0 h-screen transition-position overflow-hidden xl:flex">
         <div class="bg-gray-800 lg:rounded-2xl flex-1 flex flex-col overflow-hidden dark:bg-slate-900">
             <div class="bg-gray-900 text-white flex flex-row h-[6rem] items-center justify-between dark:bg-slate-900">
                 <div class="text-center flex-1 lg:text-left lg:pl-6 xl:text-center text-3xl xl:pl-0">
                     <b class="font-black">One</b>
                 </div>
-                <button class="hidden lg:inline-block xl:hidden p-3">
+                <button @click="$emit('close',false)" class="hidden lg:inline-block xl:hidden p-3">
                     <span class="inline-flex justify-center items-center"><svg viewBox="0 0 24 24" width="16" height="16"
                             class="inline-block">
                             <path fill="currentColor"

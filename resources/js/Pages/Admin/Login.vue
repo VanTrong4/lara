@@ -39,6 +39,7 @@ const submit = () => {
             {{ status }}
         </div>
         <div class="container">
+            <h2 class="text-center mb-[2rem] text-5xl">Admin</h2>
             <form @submit.prevent="submit" :action="route('admin.checkLogin')" method="post">
                 <div>
                     <InputLabel for="email" value="Email" class=" text-3xl font-bold" />

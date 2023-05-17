@@ -29,13 +29,13 @@
                 <td>
                     編集
                 </td>
-                <td>{{ $user->created_at }}</td>
+                <td>{{ substr($user->created_at,0,10)}}日</td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->Furigana }}</td>
                 <td>{{ $user->year }}</td>
                 <td>{{ $user->gender }}</td>
                 <td>{{ $user->email }}</td>
-                <td>*********</td>
+                <td>××××××××</td>
             </tr>
             @endforeach
     </tbody>
