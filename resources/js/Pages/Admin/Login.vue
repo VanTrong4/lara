@@ -40,6 +40,7 @@ const submit = () => {
         </div>
         <div class="container">
             <h2 class="text-center mb-[2rem] text-5xl">Admin</h2>
+            <div v-if="$page.props.flash.message" class="text-3xl text-red-600 mb-8">{{ $page.props.flash.message }}</div>
             <form @submit.prevent="submit" method="post">
                 <div>
                     <InputLabel for="email" value="Email" class=" text-3xl font-bold" />

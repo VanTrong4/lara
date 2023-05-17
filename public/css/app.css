@@ -1328,6 +1328,10 @@ select {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
 .pb-1 {
   padding-bottom: 0.25rem;
 }
@@ -1505,8 +1509,19 @@ select {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+.text-green-400 {
+  --tw-text-opacity: 1;
+  color: rgb(74 222 128 / var(--tw-text-opacity));
+}
+.text-red-300 {
+  --tw-text-opacity: 1;
+  color: rgb(252 165 165 / var(--tw-text-opacity));
+}
 .underline {
   text-decoration-line: underline;
+}
+.decoration-green-600 {
+  text-decoration-color: #16a34a;
 }
 .antialiased {
   -webkit-font-smoothing: antialiased;

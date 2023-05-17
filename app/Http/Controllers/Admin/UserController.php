@@ -57,7 +57,7 @@ class UserController extends Controller
             'gender'=> $request->gender,
             'is_admin'=> $request->is_admin,
         ]);
-        return redirect()->route('admin.users-edit',$id);
+        return redirect()->route('admin.users-edit',$id)->with('message','Update User Success!');
     }
     
     public function excel()

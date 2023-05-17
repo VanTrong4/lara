@@ -14,7 +14,7 @@ class AuthController extends Controller
         if(Auth::attempt(['email'=> $request->email,'password'=> $request->password, "is_admin"=>1])){
             return redirect()->route('admin.dashboard');
         }else{
-            return redirect()->route('admin.renderLogin');
+            return redirect()->route('admin.renderLogin')->with('message','Permission denied!');
         }
     }
 
