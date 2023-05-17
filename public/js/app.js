@@ -24350,7 +24350,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         }),
         type: "email",
         autocomplete: "email",
-        placeholder: "※半角英数字でご入力"
+        placeholder: "※半角英数字でご入力",
+        disabled: ""
       }, null, 8 /* PROPS */, ["modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["InputError"], {
         "class": "mt-2",
         message: $setup.form.errors.email

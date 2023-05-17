@@ -114,7 +114,7 @@ const submit = () => {
                             </div>
                             <div class="w-[60%] sm:w-[100%]">
                                 <TextInput id="email" v-model="form.email" type="email" autocomplete="email"
-                                    placeholder="※半角英数字でご入力" />
+                                    placeholder="※半角英数字でご入力" disabled/>
                                 <InputError class="mt-2" :message="form.errors.email" />
                             </div>
                         </div>

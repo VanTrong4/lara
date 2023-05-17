@@ -18,6 +18,6 @@ class UserExport implements FromView,ShouldAutoSize
 
     public function view(): View
     {
-        return view('file.UserExcel',['users'=>$this->users]);
+        return view('File.UserExcel',['users'=>$this->users]);
     }
 }

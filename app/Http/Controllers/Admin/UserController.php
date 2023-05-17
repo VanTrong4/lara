@@ -9,6 +9,7 @@ use Inertia\Inertia;
 use App\Models\User;
 use App\Exports\UserExport;
 use App\Http\Requests\ProfileUpdateRequest;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -35,8 +36,17 @@ class UserController extends Controller
         return Inertia::render('Admin/Users/UsersEdit',['user' => $user]);
     }
     
-    public function update(ProfileUpdateRequest $request, $id)
+    public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => ['required','string', 'max:255'],
+            'email' => ['required','email', 'max:255'],
+            'Furigana' => ['required','string', 'max:255'],
+            'year' => ['required', 'max:255'],
+            'month' => ['required','max:255'],
+            'day' => ['required','max:255'],
+            'gender' => ['required','string', 'max:255'],
+        ]);
         $user = User::find($id);
         $user->update([
             'name'=> $request->name,
@@ -45,7 +55,6 @@ class UserController extends Controller
             'month'=> $request->month,
             'day'=> $request->day,
             'gender'=> $request->gender,
-            'email'=> $request->email,
             'is_admin'=> $request->is_admin,
         ]);
         return redirect()->route('admin.users-edit',$id);
