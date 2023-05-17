@@ -58,10 +58,9 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('admin/login', function () {
-    return Inertia::render('Admin/Login');
-})->name("admin.login");
-Route::post('admin/login', [AuthController::class,'checkLogin'])->name('admin.checkLogin');
+Route::get('admin/login', [AuthController::class,'checkAuth'])->name("admin.renderLogin");
+
+Route::post('admin/login-next', [AuthController::class,'login'])->name('admin.login');
 
 Route::prefix('admin')->middleware('admin.checkLogin')->group(function(){
 

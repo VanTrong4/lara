@@ -23,7 +23,7 @@ const form = useForm({
 });
 
 const submit = () => {
-    form.post(route('admin.checkLogin'), {
+    form.post(route('admin.login'), {
         onFinish: () => {
             form.reset('password')},
     });
@@ -40,7 +40,7 @@ const submit = () => {
         </div>
         <div class="container">
             <h2 class="text-center mb-[2rem] text-5xl">Admin</h2>
-            <form @submit.prevent="submit" :action="route('admin.checkLogin')" method="post">
+            <form @submit.prevent="submit" method="post">
                 <div>
                     <InputLabel for="email" value="Email" class=" text-3xl font-bold" />
 

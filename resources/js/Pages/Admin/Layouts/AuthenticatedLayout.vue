@@ -26,13 +26,13 @@ const showingSidebar = ref(screen.width>768);
                                     </svg></span></div>
                             <!-- Navigation Links -->
                             <div class="flex items-center">
-                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                                <NavLink :href="route('admin.dashboard')">
                                     Dashboard
                                 </NavLink>
                             </div>
                         </div>
 
-                        <div class="sm:hidden flex items-center ml-6">
+                        <div class="flex items-center ml-6">
                             <!-- Settings Dropdown -->
                             <div class="relative">
                                 <Dropdown align="right" width="48">
@@ -40,8 +40,7 @@ const showingSidebar = ref(screen.width>768);
                                         <span class="inline-flex rounded-md">
                                             <button type="button"
                                                 class="inline-flex h-[3rem] text-3xl items-center px-3 py-2 border border-transparent leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                                                trong
-
+                                                {{ $page.props.auth.user.name }}
                                                 <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 20 20" fill="currentColor">
                                                     <path fill-rule="evenodd"
@@ -53,7 +52,7 @@ const showingSidebar = ref(screen.width>768);
                                     </template>
 
                                     <template #content>
-                                        <DropdownLink class=" text-3xl" :href="route('admin.logout')" method="post"
+                                        <DropdownLink class=" text-3xl" :href="route('admin.logout')" method="get"
                                             as="button">
                                             Log Out
                                         </DropdownLink>
@@ -62,50 +61,6 @@ const showingSidebar = ref(screen.width>768);
                             </div>
                         </div>
 
-                        <!-- Hamburger -->
-                        <div class="-mr-2 items-center hidden sm:flex">
-                            <button @click="showingNavigationDropdown = !showingNavigationDropdown"
-                                class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
-                                <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                                    <path :class="{
-                                        hidden: showingNavigationDropdown,
-                                        'inline-flex': !showingNavigationDropdown,
-                                    }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4 6h16M4 12h16M4 18h16" />
-                                    <path :class="{
-                                        hidden: !showingNavigationDropdown,
-                                        'inline-flex': showingNavigationDropdown,
-                                    }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Responsive Navigation Menu -->
-                <div :class="{ block: showingNavigationDropdown, hidden: !showingNavigationDropdown }"
-                    class="bg-slate-200 absolute right-[1.5rem] top-[4rem] rounded-md">
-                    <div class="pt-2 pb-3 space-y-1 text-xl">
-                        <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                            Dashboard
-                        </ResponsiveNavLink>
-                    </div>
-
-                    <!-- Responsive Settings Options -->
-                    <div class="pt-4 pb-1 border-t border-gray-200 text-xl">
-                        <div class="px-4">
-                            <div class="font-medium text-xl text-gray-800">
-                                trong
-                            </div>
-                            <div class="font-medium text-gray-500">trong@gmail</div>
-                        </div>
-
-                        <div class="mt-3 space-y-1 text-xl">
-                            <ResponsiveNavLink :href="route('admin.logout')" method="post" as="button">
-                                Log Out
-                            </ResponsiveNavLink>
-                        </div>
                     </div>
                 </div>
             </nav>

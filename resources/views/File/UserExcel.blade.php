@@ -29,7 +29,7 @@
                 <td>
                     編集
                 </td>
-                <td>{{ substr($user->created_at,0,10)}}日</td>
+                <td>{{ $user->created_at->format('Y年m月d日')}}</td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->Furigana }}</td>
                 <td>{{ $user->year }}</td>
