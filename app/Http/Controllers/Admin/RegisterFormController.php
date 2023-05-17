@@ -14,7 +14,7 @@ class RegisterFormController extends Controller
     
     public function index()
     {
-        $datas = RegisterForm::with('user')->paginate(10);
+        $datas = RegisterForm::with('user')-> orderBy('created_at', 'desc')->paginate(10);
         return Inertia::render('Admin/RegisterForm/Index',['datas' => $datas]);
     }
     
