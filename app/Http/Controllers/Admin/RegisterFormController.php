@@ -52,7 +52,7 @@ class RegisterFormController extends Controller
         $mpdf->autoLangToFont = true;
         $mpdf->simpleTables = false;
         
-        $mpdf->WriteHTML(view('file.RegisterFormPdf',['datas'=>$datas]));
+        $mpdf->WriteHTML(view('File.RegisterFormPdf',['datas'=>$datas]));
         $mpdf->Output('contract.pdf','D');
     }
 }

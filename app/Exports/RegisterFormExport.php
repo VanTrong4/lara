@@ -18,6 +18,6 @@ class RegisterFormExport implements FromView,ShouldAutoSize
 
     public function view(): View
     {
-        return view('file.RegisterFormExcel',['datas'=>$this->datas]);
+        return view('File.RegisterFormExcel',['datas'=>$this->datas]);
     }
 }

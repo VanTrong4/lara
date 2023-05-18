@@ -55,7 +55,7 @@
                                     <td>PDF化</td>
                                     <td>写真</td>
                                     <td>詳細</td>
-                                    <td>{{ substr($data->user->created_at,0,10)}}日</td>
+                                    <td>{{ $data->user->created_at->format('Y年m月d日')}}</td>
                                     <td>{{ $data->user->name }}</td>
                                     <td>{{ $data->user->Furigana }}</td>
                                     <td>{{ $data->user->year }}年{{ $data->user->month }}月{{ $data->user->day }}日</td>

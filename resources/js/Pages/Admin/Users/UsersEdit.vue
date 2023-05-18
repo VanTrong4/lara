@@ -38,6 +38,7 @@ const submit = () => {
                     <div class="p-6 text-2xl text-gray-900">Users</div>
                 </div>
                 <div class="rounded-2xl bg-white mt-[2rem]">
+                    <div v-if="$page.props.flash.message" class="text-3xl text-green-400 px-[4rem] py-10">{{ $page.props.flash.message }}</div>
                     <form @submit.prevent="submit"
                         class="w-full px-[4rem] py-[4rem] border border-slate-500 rounded-sm sm:px-[1rem]">
                         <div class="flex flex-wrap justify-between p-[2rem] border-t border-t-slate-400 gap-[5%]">
@@ -114,7 +115,7 @@ const submit = () => {
                             </div>
                             <div class="w-[60%] sm:w-[100%]">
                                 <TextInput id="email" v-model="form.email" type="email" autocomplete="email"
-                                    placeholder="※半角英数字でご入力" />
+                                    placeholder="※半角英数字でご入力" disabled/>
                                 <InputError class="mt-2" :message="form.errors.email" />
                             </div>
                         </div>
