@@ -88,7 +88,7 @@ class FormConfirmController extends Controller
         'frontCardUser',
         'afterCardUser',]);
         $value = array_merge($value,array("idUser"=>auth()->user()->id));
-        DB::table('tbl_registerForm')->insert($value);
+        DB::table('tbl_registerform')->insert($value);
         $mailData = $request->all();
         Mail::to($mailData['email'])->send(new MailToUser($mailData));
         Mail::to('ps2210001@gmail.com')->send(new MailToAdmin($mailData));
