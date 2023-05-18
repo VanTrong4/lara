@@ -31,7 +31,7 @@ const form = useForm({
         <div class="py-12 min-h-screen">
             <div class="mx-auto px-[6.4rem] w-full">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg py-[4rem]">
-                    <div class="p-6 text-2xl text-gray-900">Users</div>
+                    <div class="p-6 text-2xl text-gray-900">顧客管理一覧</div>
                 </div>
                 <div class="rounded-2xl bg-white mt-[2rem]">
                     <form @submit.prevent="submit"

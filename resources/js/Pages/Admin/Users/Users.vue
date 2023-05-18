@@ -14,7 +14,7 @@ const props = defineProps({
         <div class="py-12 min-h-screen">
             <div class="mx-auto px-[2.4rem] w-full">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg py-[4rem]">
-                    <div class="p-6 text-2xl text-gray-900">Users</div>
+                    <div class="p-6 text-2xl text-gray-900">顧客管理一覧</div>
                 </div>
                 <div class="flex gap-[2rem] mt-[2rem] justify-end">
                         <Link :href="route('admin.users-create')" class="inline-flex justify-center items-center px-[0.8rem] whitespace-nowrap focus:outline-none transition-colors focus:ring duration-150 border cursor-pointer rounded border-blue-600 dark:border-blue-500 ring-blue-300 dark:ring-blue-700 bg-blue-600 dark:bg-blue-500 text-white hover:bg-blue-700 hover:border-blue-700 hover:dark:bg-blue-600 hover:dark:border-blue-600 p-1 last:mr-0 text-xl">新規追加</Link>

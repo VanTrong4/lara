@@ -33,7 +33,7 @@ const submit = (id) => {
         <div class="py-12 min-h-screen">
             <div class="mx-auto px-[2.4rem] w-full">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg py-[4rem]">
-                    <div class="p-6 text-2xl text-gray-900">RegisterForm</div>
+                    <div class="p-6 text-2xl text-gray-900">お申込み内容一覧</div>
                 </div>
                 <div class="flex gap-[2rem] mt-[2rem] justify-end">
                         <form :action="route('admin.formRegister-excel')" method="get">

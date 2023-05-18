@@ -47,7 +47,7 @@ let current = route().current();
                                     <path fill="currentColor"
                                         d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z">
                                     </path>
-                                </svg></span><span class="grow text-ellipsis line-clamp-1 pr-12 text-2xl" :class="current=='admin.users' && 'text-white font-bold'">Users</span>
+                                </svg></span><span class="grow text-ellipsis line-clamp-1 pr-12 text-2xl" :class="current=='admin.users' && 'text-white font-bold'">顧客管理一覧</span>
                         </Link>
                     </li>
                     <li>
@@ -59,7 +59,7 @@ let current = route().current();
                                     <path fill="currentColor"
                                         d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z">
                                     </path>
-                                </svg></span><span class="grow text-ellipsis line-clamp-1 pr-12 text-2xl" :class="current=='admin.formRegister' && 'text-white font-bold'">FormRegister</span>
+                                </svg></span><span class="grow text-ellipsis line-clamp-1 pr-12 text-2xl" :class="current=='admin.formRegister' && 'text-white font-bold'">お申込み内容一覧</span>
                         </Link>
                     </li>
                     <li>
@@ -71,17 +71,33 @@ let current = route().current();
                                     <path fill="currentColor"
                                         d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z">
                                     </path>
-                                </svg></span><span class="grow text-ellipsis line-clamp-1 pr-12 text-2xl">exexex</span>
+                                </svg></span><span class="grow text-ellipsis line-clamp-1 pr-12 text-2xl">広告マスター</span>
                         </Link>
-                        <ul class="bg-gray-700/50 hidden">
-                            <li><Link href=""
-                                    class="flex cursor-pointer py-3 px-6 text-sm text-gray-300 hover:text-white dark:text-slate-300 dark:hover:text-white"><!----><span
-                                    class="grow text-ellipsis line-clamp-1 pr-12">Item One</span><!----></Link><!----></li>
-                        <li><Link href=""
-                                class="flex cursor-pointer py-3 px-6 text-sm text-gray-300 hover:text-white dark:text-slate-300 dark:hover:text-white"><!----><span
-                                    class="grow text-ellipsis line-clamp-1 pr-12">Item Two</span><!----></Link><!----></li>
-                    </ul>
-                </li>
+                    </li>
+                    <li>
+                        <Link href=""
+                            class="flex cursor-pointer py-[1.2rem] text-gray-300 hover:text-white dark:text-slate-300 dark:hover:text-white">
+                            <span
+                                class="inline-flex justify-center items-center w-[6.4rem] flex-none font-bold text-white"><svg
+                                    viewBox="0 0 24 24" width="18" height="18" class="inline-block">
+                                    <path fill="currentColor"
+                                        d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z">
+                                    </path>
+                                </svg></span><span class="grow text-ellipsis line-clamp-1 pr-12 text-2xl">古物台帳</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link :href="route('admin.logout')"
+                            class="flex cursor-pointer py-[1.2rem] mt-[4rem] text-gray-300 hover:text-white dark:text-slate-300 dark:hover:text-white">
+                            <span
+                                class="inline-flex justify-center items-center w-[6.4rem] flex-none font-bold text-white"><svg
+                                    viewBox="0 0 24 24" width="18" height="18" class="inline-block">
+                                    <path fill="currentColor"
+                                        d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z">
+                                    </path>
+                                </svg></span><span class="grow text-ellipsis line-clamp-1 pr-12 text-2xl">ログアウト</span>
+                        </Link>
+                    </li>
             </ul>
         </div>
     </div>

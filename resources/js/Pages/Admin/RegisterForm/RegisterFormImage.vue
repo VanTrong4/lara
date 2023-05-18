@@ -25,18 +25,18 @@ const props = defineProps({
                     <div class="w-[55%] sm:w-[100%]">
                         <div class="flex flex-wrap gap-y-[1.5rem] mb-[2rem] sm:w-full">
                             <div class="w-1/2 text-3xl sm:w-full">セルフィー（自画撮り）</div>
-                            <img class="w-[100px] h-auto" :src="`/storage/image/${datas[0].avatarUser}`">
+                            <img class="w-[100px] h-auto" :src="`/storage/app/public/image/${datas[0].avatarUser}`">
                         </div>
                         <div class="flex flex-wrap gap-y-[1.5rem]">
                             <div class="w-1/2 text-3xl sm:w-full">運転免許証、または<br>顔写真付きの身分証明書</div>
                             <div class="w-1/2 text-xl sm:w-full">
                                 <div class="mb-[1.5rem]">
                                     <span class=" font-medium text-red-500">※表面</span>
-                                    <img class="w-[100px] h-auto" :src="`/storage/image/${datas[0].frontCardUser}`">
+                                    <img class="w-[100px] h-auto" :src="`/storage/app/public/image/${datas[0].frontCardUser}`">
                                 </div>
                                 <div>
                                     <span class=" font-medium text-red-500">※裏面</span>
-                                    <img class="w-[100px] h-auto" :src="`/storage/image/${datas[0].afterCardUser}`">
+                                    <img class="w-[100px] h-auto" :src="`/storage/app/public/image/${datas[0].afterCardUser}`">
                                 </div>
                             </div>
                         </div>
