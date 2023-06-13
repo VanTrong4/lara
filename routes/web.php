@@ -66,7 +66,7 @@ Route::prefix('admin')->middleware('admin.checkLogin')->group(function(){
 
     
     Route::get('/', function () {
-        return Inertia::render('Admin/Dashboard');
+        return redirect()->route('admin.dashboard');
     });
 
     Route::get('/logout', [AuthController::class,'logout'])->name("admin.logout");
@@ -91,6 +91,10 @@ Route::prefix('admin')->middleware('admin.checkLogin')->group(function(){
 
     Route::prefix('formRegister')->group(function(){
         Route::get('', [RegisterFormController::class,'index'])->name("admin.formRegister");
+
+        Route::get('/list-image', [RegisterFormController::class,'listImage'])->name("admin.formRegister.listImage");
+
+        Route::get('/list-image/card', [RegisterFormController::class,'listImageCard'])->name("admin.formRegister.listImage.card");
         
         Route::get('/detail/{id}', [RegisterFormController::class,'detail'])->name("admin.formRegister-detail");
         

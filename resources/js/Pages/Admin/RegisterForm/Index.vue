@@ -30,10 +30,13 @@ const submit = (id) => {
     <Head title="RegisterForm" />
 
     <AuthenticatedLayout>
-        <div class="py-12 min-h-screen">
+        <div class="pt-[7rem] pb-12 min-h-screen">
             <div class="mx-auto px-[2.4rem] w-full">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg py-[4rem]">
-                    <div class="p-6 text-2xl text-gray-900">お申込み内容一覧</div>
+                <div class="p-3 rounded bg-white mr-4 shadow-sm inline-block text-sky-400 hover:bg-slate-200 hover:text-slate-500" :class="{'bg-sky-400 font-bold':route().current('admin.formRegister')}">
+                    <Link :href="route('admin.formRegister')" class="p-6 text-2xl" :class="{'text-white':route().current('admin.formRegister')}">お申込み内容一覧</Link>
+                </div>
+                <div class="p-3 rounded bg-white shadow-sm inline-block text-sky-400 hover:bg-slate-200 hover:text-slate-500" :class="{'bg-sky-400 font-bold':route().current('admin.formRegister.listImage')}">
+                    <Link :href="route('admin.formRegister.listImage')" class="p-6 text-2xl" :class="{'text-white':route().current('admin.formRegister.listImage')}">必要書類・写真の確認</Link>
                 </div>
                 <div class="flex gap-[2rem] mt-[2rem] justify-end">
                         <form :action="route('admin.formRegister-excel')" method="get">

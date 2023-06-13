@@ -29,6 +29,18 @@ class RegisterFormController extends Controller
         $datas = RegisterForm::select('avatarUser','frontCardUser','afterCardUser')->where('id','=',$id)->get();
         return Inertia::render('Admin/RegisterForm/RegisterFormImage',['datas' => $datas]);
     }
+    
+    public function listImage()
+    {
+        $datas = RegisterForm::with('user')-> orderBy('created_at', 'desc')->paginate(10);
+        return Inertia::render('Admin/RegisterForm/ListImageIndex',['datas' => $datas]);
+    }
+
+    public function listImageCard()
+    {
+        $datas = RegisterForm::with('user')-> orderBy('created_at', 'desc')->paginate(10);
+        return Inertia::render('Admin/RegisterForm/ListImageCard',['datas' => $datas]);
+    }
 
     public function updateStatus(Request $request,$id)
     {

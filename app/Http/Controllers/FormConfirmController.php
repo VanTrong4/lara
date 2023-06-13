@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\Request;
-use DB;
 use Inertia\Inertia;
 use App\Mail\MailToUser;
 use App\Mail\MailToAdmin;
 use Mail;
+use App\Models\RegisterForm;
 
 class FormConfirmController extends Controller
 {
@@ -88,7 +88,7 @@ class FormConfirmController extends Controller
         'frontCardUser',
         'afterCardUser',]);
         $value = array_merge($value,array("idUser"=>auth()->user()->id));
-        DB::table('tbl_registerform')->insert($value);
+        RegisterForm::create($value);
         $mailData = $request->all();
         Mail::to($mailData['email'])->send(new MailToUser($mailData));
         Mail::to('ps2210001@gmail.com')->send(new MailToAdmin($mailData));
